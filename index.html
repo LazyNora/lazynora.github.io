@@ -1267,7 +1267,7 @@
         var gw = new GraphWidget();
         var isAVL = false;
 
-        var valueRange = [1, 1000]; // Range of valid values of BST vertexes allowed
+        var valueRange = [1, 999]; // Range of valid values of BST vertexes allowed
         var maxHeightAllowed = 9; // max 9 edges (10 vertices)
 
         var initialArray = [15, 6, 23, 4, 7, 71, 5, 50];
@@ -2095,7 +2095,7 @@
             cs["vl"][key]["state"] = VERTEX_TRAVERSED;
             cs["vl"][key]["extratext"] = "root";
             //cs["status"] = "The root " + iBST["root"] + " is not null.";  //status_inorder_2
-            cs["status"] = "Gốc {root} không pải là giá trị rỗng.".replace(
+            cs["status"] = "Gốc {root} không phải là giá trị rỗng.".replace(
               "{root}",
               iBST["root"]
             );
@@ -2119,7 +2119,7 @@
           cs = createState(iBST, vertexTraversed, edgeTraversed);
           inorderHighlightVertex(key);
           cs["status"] =
-            "Quá trình duyệt theo thứ tự của toàn bộ BST đã hoàn tất.<br>Kết quả: " +
+            "Quá trình duyệt theo thứ tự (In-order) của toàn bộ BST đã hoàn tất.<br>Kết quả: " +
             in_list.slice(0, -1); //status_inorder_4
           //cs["status"] = 'In-order traversal of the whole BST is complete.';
           cs["vl"][key]["extratext"] = "root";
@@ -2225,7 +2225,7 @@
             inorderHighlightVertex(key);
 
             //cs["status"] = "In-order traversal of " + cur + " is complete.";  //status_inorder_12
-            cs["status"] = "Duyệt theo thứ tự của {cur} đã hoàn tất.".replace(
+            cs["status"] = "Duyệt theo In-order của {cur} đã hoàn tất.".replace(
               "{cur}",
               cur
             );
@@ -2253,7 +2253,7 @@
           var vertexHighlighted = {};
 
           cs = createState(iBST);
-          cs["status"] = "Start Pre-order"; //'The current BST.';
+          cs["status"] = "Bắt đầu Pre-order"; //'The current BST.';
           cs["lineNo"] = 0;
           sl.push(cs);
 
@@ -2262,7 +2262,7 @@
           if (iBST["root"] == null) {
             cs = createState(iBST);
             cs["status"] =
-              "The Binary Search Tree is empty.<br>Return empty result."; //status_preorder_1
+              "Cây BST rỗng.<br>Trả về giá trị rỗng."; //status_preorder_1
             //cs["status"] = 'The Binary Search Tree is empty.<br>Return empty result.';
             cs["lineNo"] = [1, 2];
             sl.push(cs);
@@ -2273,7 +2273,7 @@
             cs = createState(iBST);
             cs["vl"][key]["state"] = VERTEX_TRAVERSED;
             cs["vl"][key]["extratext"] = "root";
-            cs["status"] = "The root " + iBST["root"] + " is not null."; //status_preorder_2
+            cs["status"] = "Gốc " + iBST["root"] + " không phải là giá trị rỗng."; //status_preorder_2
             //cs["status"] = 'The root {root} is not null.'.replace("{root}", iBST["root"]);
             cs["lineNo"] = 1;
             sl.push(cs);
@@ -2284,7 +2284,7 @@
           cs = createState(iBST, vertexTraversed, edgeTraversed);
           preorderHighlightVertex(key);
           cs["status"] =
-            "Pre-order traversal of the whole BST is complete.<br>Final Pre-order: " +
+            "Quá trình duyệt theo Pre-order của toàn bộ BST đã hoàn tất.<br>Kết quả: " +
             pre_list.slice(0, -1); //status_preorder_4
           //cs["status"] = 'In-order traversal of the whole BST is complete.';
           cs["vl"][key]["extratext"] = "root";
@@ -2302,12 +2302,7 @@
             vertexHighlighted[key] = true;
             preorderHighlightVertex(key);
             pre_list = pre_list + cur + ",";
-            cs["status"] =
-              "Visit vertex with value " +
-              cur +
-              " and prepare to go to the left subtree.<br>Pre-order: " +
-              pre_list +
-              "..."; //status_preorder_8
+            cs["status"] = "Gặp nút " + cur + " và chuẩn bị chuyển sang cây con bên trái.<br>Pre-order: " + pre_list + "..."; //status_preorder_8
             //cs["status"] = 'Visit vertex with value {cur}.<br>And preparing to visit the right child of this vertex.'.replace("{cur}", cur);
             cs["lineNo"] = 3;
             sl.push(cs);
@@ -2317,9 +2312,9 @@
               cs = createState(iBST, vertexTraversed, edgeTraversed);
               preorderHighlightVertex(key);
               cs["status"] =
-                "The left child of vertex with value " +
+                "Giá trị của nút con bên trái của nút " +
                 cur +
-                " is empty.<br>Return empty."; //status_preorder_5
+                " là rỗng.<br>Trả về rỗng."; //status_preorder_5
               //cs["status"] = 'The left child of vertex with value {cur} is empty.<br>Return empty.'.replace("{cur}", cur);
               cs["lineNo"] = [1, 2];
               sl.push(cs);
@@ -2330,11 +2325,11 @@
               cs = createState(iBST, vertexTraversed, edgeTraversed);
               preorderHighlightVertex(key);
               cs["status"] =
-                "The left child of vertex with value " +
+                "Giá trị của nút con bên trái của nút " +
                 cur +
-                " is " +
+                " là " +
                 curLeft +
-                " (not null)."; //status_preorder_6
+                " (khác rỗng)."; //status_preorder_6
               //cs["status"] = 'The left child of vertex with value {cur} is {curLeft} (not null).'.replace("{cur}", cur).replace("{curLeft}", curLeft);
               cs["lineNo"] = 3;
               sl.push(cs);
@@ -2343,7 +2338,7 @@
               cs["el"][curLeftClass]["animateHighlighted"] = true;
               preorderHighlightVertex(key);
               cs["status"] =
-                "So recurse and check left child of vertex with value " +
+                "Vì vậy lập lại và kiểm tra nút con bên trái của nút " +
                 curLeft +
                 "."; //status_preorder_7
               //cs["status"] = 'So recurse and check left child of vertex with value {curLeft}.'.replace("{curLeft}", curLeft);
@@ -2357,9 +2352,9 @@
               cs = createState(iBST, vertexTraversed, edgeTraversed);
               preorderHighlightVertex(key);
               cs["status"] =
-                "The right child of vertex with value " +
+                "Giá trị của nút con bên phải của nút " +
                 cur +
-                " is empty.<br>Return empty.<br>"; //status_preorder_9
+                " là rỗng.<br>Trả về rỗng.<br>"; //status_preorder_9
               //cs["status"] = 'The right child of vertex with value {cur} is empty.<br>Return empty.<br>'.replace("{cur}", cur);
               cs["lineNo"] = [1, 2];
               sl.push(cs);
@@ -2369,11 +2364,11 @@
               cs = createState(iBST, vertexTraversed, edgeTraversed);
               preorderHighlightVertex(key);
               cs["status"] =
-                "Preparing to visit the right child of this vertex.<br>The right child of vertex with value " +
+                "Chuẩn bị gặp nút con bên phải của nút này.<br>Giá trị của nút con bên phải của nút " +
                 cur +
-                " is " +
+                " là " +
                 curRight +
-                " (not null)."; //status_preorder_10
+                " (khác rỗng)."; //status_preorder_10
               //cs["status"] = 'The right child of vertex with value {cur} is {curRight} (not null).'.replace("{cur}", cur).replace("{curRight}", curRight);
               cs["lineNo"] = 3;
               sl.push(cs);
@@ -2382,7 +2377,7 @@
               cs["el"][curRightClass]["animateHighlighted"] = true;
               preorderHighlightVertex(key);
               cs["status"] =
-                "So recurse and check right child of vertex with value " +
+                "Vì vậy lặp lại và kiểm tra nút con bên phải của nút " +
                 curRight +
                 "."; //status_preorder_7
               //cs["status"] = 'So recurse and check the right child of vertex with value {curRight}.'.replace("{curRight}", curRight);
@@ -2395,7 +2390,7 @@
             if (cur != iBST["root"]) cs["el"][key]["state"] = EDGE_HIGHLIGHTED;
             preorderHighlightVertex(key);
 
-            cs["status"] = "Pre-order traversal of " + cur + " is complete."; //status_preorder_12
+            cs["status"] = "Duyệt theo Pre-order của " + cur + " đã hoàn tất."; //status_preorder_12
             //cs["status"] = 'In-order traversal of {cur} is complete.'.replace("{cur}", cur);
             cs["lineNo"] = 0;
             sl.push(cs);
@@ -2423,7 +2418,7 @@
 
           cs = createState(iBST);
           //cs["status"] = "The current BST.";  //status_insert_0
-          cs["status"] = "The current BST.";
+          cs["status"] = "Cây BST hiện tại.";
           cs["lineNo"] = 0;
           sl.push(cs);
 
@@ -2432,7 +2427,7 @@
             Object.prototype.toString.call(vertexTextArr) != "[object Array]"
           ) {
             $("#insert-err").html(
-              "Please fill in a number or comma-separated array of numbers!"
+              "Hãy nhập vào một số hoặc một dãy số cách nhau bằng dấu phẩy!"
             );
             return false;
           }
@@ -2446,14 +2441,14 @@
             // 1. Check whether value is number
             if (isNaN(vt)) {
               $("#insert-err").html(
-                "Please fill in a number or comma-separated array of numbers!"
+                "Hãy nhập vào một số hoặc một dãy số cách nhau bằng dấu phẩy!"
               );
               return false;
             }
 
             // 2. No duplicates allowed. Also works if more than one similar value are inserted
             if (tempiBST[vt] != null) {
-              $("#insert-err").html("No duplicate vertex allowed!");
+              $("#insert-err").html("Không cho phép trùng lặp giá trị của nút!");
               if (typeof callback == "function") callback();
               return false;
             }
@@ -2461,7 +2456,7 @@
             // 3. Check range
             if (parseInt(vt) < valueRange[0] || parseInt(vt) > valueRange[1]) {
               $("#insert-err").html(
-                "Sorry, only values between {range1} and {range2} can be inserted."
+                "Xin lỗi, chỉ những giá trị trong khoảng từ {range1} dến {range2} có thể được thêm vào."
                   .replace("{range1}", valueRange[0])
                   .replace("{range2}", valueRange[1])
               );
@@ -2505,7 +2500,7 @@
 
             if (heightCounter > maxHeightAllowed + 1) {
               $("#insert-err").html(
-                "Sorry, this visualization can only support tree of maximum height {maxHeight}".replace(
+                "Xin lỗi, hiện tại chỉ có thể hỗ trợ cây có chiều cao tối đa là {maxHeight}".replace(
                   "{maxHeight}",
                   maxHeightAllowed
                 )
@@ -2551,7 +2546,7 @@
               vertexTraversed[cur] = true;
 
               //cs["status"] = "Comparing " + val + " with " + cur; //status_insert_1
-              cs["status"] = "Comparing {val} with {cur}"
+              cs["status"] = "So sánh {val} với {cur}"
                 .replace("{val}", val)
                 .replace("{cur}", cur);
               if (!isAVL) cs["lineNo"] = 3;
@@ -2577,14 +2572,14 @@
 
               if (parseInt(val) > parseInt(iBST[cur]["parent"])) {
                 //cs["status"] = val + " is larger than " + iBST[cur]["parent"] + ", so go right."; //status_insert_2
-                cs["status"] = "{val} is larger than {parent}, so go right."
+                cs["status"] = "{val} lớn hơn {parent}, đi qua phải."
                   .replace("{val}", val)
                   .replace("{parent}", iBST[cur]["parent"]);
                 if (!isAVL) cs["lineNo"] = 5;
                 else cs["lineNo"] = 1;
               } else {
                 //cs["status"] = val + " is smaller than " + iBST[cur]["parent"] + ", so go left."; //status_insert_3
-                cs["status"] = "{val} is smaller than {parent}, so go left."
+                cs["status"] = "{val} nhỏ hơn {parent}, đi qua trái."
                   .replace("{val}", val)
                   .replace("{parent}", iBST[cur]["parent"]);
                 if (!isAVL) cs["lineNo"] = 4;
@@ -2625,7 +2620,7 @@
               cs["el"][newNodeVertexClass]["animateHighlighted"] = true;
 
               //cs["status"] = "Location found!<br>Inserting " + val + "."; //status_insert_4
-              cs["status"] = "Location found!<br>Inserting {val}.".replace(
+              cs["status"] = "Đã tìm thấy vị trí!<br>Đang thêm {val}.".replace(
                 "{val}",
                 val
               );
@@ -2642,318 +2637,10 @@
             cs["vl"][newNodeVertexClass]["extratext"] = "v";
 
             //cs["status"] = val + " has been inserted!"  //status_insert_5
-            cs["status"] = "{val} has been inserted!".replace("{val}", val);
+            cs["status"] = "{val} đã được thêm!".replace("{val}", val);
             if (!isAVL) cs["lineNo"] = 2;
             else cs["lineNo"] = 1;
             sl.push(cs);
-
-            /*
-      // this frame is dropped on 8 March 2022 to focus on the insertion search path
-
-      // End State
-      cs = createState(iBST);
-      //cs["status"] = "Insert " + val + " has been completed." //status_insert_6
-      cs["status"] = 'Insert {val} has been completed.'.replace("{val}", val);
-      if (isAVL) cs["lineNo"] = 1;
-      sl.push(cs);
-*/
-
-            if (isAVL) {
-              recalculateBalanceFactor();
-
-              var vertexCheckBf = iBST[val]["parent"];
-              while (vertexCheckBf != null) {
-                var vertexCheckBfClass =
-                  iBST[vertexCheckBf]["vertexClassNumber"];
-                var bf = iBST[vertexCheckBf]["balanceFactor"];
-
-                cs = createState(iBST);
-                cs["vl"][vertexCheckBfClass]["state"] = VERTEX_HIGHLIGHTED;
-                //cs["status"] = "Balance factor of " + vertexCheckBf + " is " + bf + ".";  //status_insert_7
-                cs["status"] = "Balance factor of {vertexCheckBf} is {bf}."
-                  .replace("{vertexCheckBf}", vertexCheckBf)
-                  .replace("{bf}", bf);
-                cs["lineNo"] = 2;
-                sl.push(cs);
-
-                if (bf == 2) {
-                  var vertexCheckBfLeft = iBST[vertexCheckBf]["leftChild"];
-                  var vertexCheckBfLeftClass =
-                    iBST[vertexCheckBfLeft]["vertexClassNumber"];
-                  var bfLeft = iBST[vertexCheckBfLeft]["balanceFactor"];
-
-                  cs = createState(iBST);
-                  cs["vl"][vertexCheckBfClass]["state"] = VERTEX_HIGHLIGHTED;
-                  cs["vl"][vertexCheckBfClass]["extratext"] = "bf = " + bf;
-                  cs["vl"][vertexCheckBfLeftClass]["state"] =
-                    VERTEX_HIGHLIGHTED;
-                  cs["vl"][vertexCheckBfLeftClass]["extratext"] =
-                    "bf = " + bfLeft;
-                  //cs["vl"][vertexCheckBfLeftClass]["extratext"] = VERTEX_HIGHLIGHTED;
-                  //cs["status"] = "And balance factor of " + vertexCheckBfLeft + " is " + bfLeft + ".";  //status_insert_8
-                  cs["status"] =
-                    "And balance factor of {vertexCheckBf} is {bf}."
-                      .replace("{vertexCheckBf}", vertexCheckBfLeft)
-                      .replace("{bf}", bfLeft);
-                  cs["lineNo"] = 2;
-                  sl.push(cs);
-
-                  if (bfLeft == 1 || bfLeft == 0) {
-                    rotateRight(vertexCheckBf);
-
-                    cs = createState(iBST);
-                    cs["vl"][vertexCheckBfClass]["state"] = VERTEX_HIGHLIGHTED;
-                    cs["vl"][vertexCheckBfLeftClass]["state"] =
-                      VERTEX_HIGHLIGHTED;
-                    cs["el"][vertexCheckBfClass]["state"] = EDGE_HIGHLIGHTED;
-                    if (iBST["root"] != vertexCheckBfLeft)
-                      cs["el"][vertexCheckBfLeftClass]["state"] =
-                        EDGE_HIGHLIGHTED;
-                    //cs["status"] = "Rotate right " + vertexCheckBf + "."; //status_insert_9
-                    cs["status"] = "Rotate right {vertexCheckBf}.".replace(
-                      "{vertexCheckBf}",
-                      vertexCheckBf
-                    );
-                    cs["lineNo"] = 3;
-                    sl.push(cs);
-
-                    recalculatePosition();
-
-                    cs = createState(iBST);
-                    cs["vl"][vertexCheckBfClass]["state"] = VERTEX_HIGHLIGHTED;
-                    cs["vl"][vertexCheckBfLeftClass]["state"] =
-                      VERTEX_HIGHLIGHTED;
-                    cs["el"][vertexCheckBfClass]["state"] = EDGE_HIGHLIGHTED;
-                    if (iBST["root"] != vertexCheckBfLeft)
-                      cs["el"][vertexCheckBfLeftClass]["state"] =
-                        EDGE_HIGHLIGHTED;
-                    //cs["status"] = "Relayout the tree.";  //status_insert_10
-                    cs["status"] = "Relayout the tree.";
-                    cs["lineNo"] = 3;
-                    sl.push(cs);
-                  } else if (bfLeft == -1) {
-                    var vertexCheckBfLeftRight =
-                      iBST[vertexCheckBfLeft]["rightChild"];
-                    var vertexCheckBfLeftRightClass =
-                      iBST[vertexCheckBfLeftRight]["vertexClassNumber"];
-
-                    rotateLeft(vertexCheckBfLeft);
-
-                    cs = createState(iBST);
-                    cs["vl"][vertexCheckBfLeftClass]["state"] =
-                      VERTEX_HIGHLIGHTED;
-                    cs["vl"][vertexCheckBfLeftRightClass]["state"] =
-                      VERTEX_HIGHLIGHTED;
-                    cs["el"][vertexCheckBfLeftClass]["state"] =
-                      EDGE_HIGHLIGHTED;
-                    cs["el"][vertexCheckBfLeftRightClass]["state"] =
-                      EDGE_HIGHLIGHTED;
-                    //cs["status"] = "Rotate left " + vertexCheckBfLeft + ".";  //status_insert_11
-                    cs["status"] = "Rotate left {vertexCheckBf}.".replace(
-                      "{vertexCheckBf}",
-                      vertexCheckBfLeft
-                    );
-                    cs["lineNo"] = 4;
-                    sl.push(cs);
-
-                    recalculatePosition();
-
-                    cs = createState(iBST);
-                    cs["vl"][vertexCheckBfLeftClass]["state"] =
-                      VERTEX_HIGHLIGHTED;
-                    cs["vl"][vertexCheckBfLeftRightClass]["state"] =
-                      VERTEX_HIGHLIGHTED;
-                    cs["el"][vertexCheckBfLeftClass]["state"] =
-                      EDGE_HIGHLIGHTED;
-                    cs["el"][vertexCheckBfLeftRightClass]["state"] =
-                      EDGE_HIGHLIGHTED;
-                    //cs["status"] = "Relayout the tree.";  //status_insert_10
-                    cs["status"] = "Relayout the tree.";
-                    cs["lineNo"] = 4;
-                    sl.push(cs);
-
-                    rotateRight(vertexCheckBf);
-
-                    cs = createState(iBST);
-                    cs["vl"][vertexCheckBfClass]["state"] = VERTEX_HIGHLIGHTED;
-                    cs["vl"][vertexCheckBfLeftRightClass]["state"] =
-                      VERTEX_HIGHLIGHTED;
-                    cs["el"][vertexCheckBfClass]["state"] = EDGE_HIGHLIGHTED;
-                    if (iBST["root"] != vertexCheckBfLeftRight)
-                      cs["el"][vertexCheckBfLeftRightClass]["state"] =
-                        EDGE_HIGHLIGHTED;
-                    //cs["status"] = "Rotate right " + vertexCheckBf + "."; //status_insert_9
-                    cs["status"] = "Rotate right {vertexCheckBf}.".replace(
-                      "{vertexCheckBf}",
-                      vertexCheckBf
-                    );
-                    cs["lineNo"] = 4;
-                    sl.push(cs);
-
-                    recalculatePosition();
-
-                    cs = createState(iBST);
-                    cs["vl"][vertexCheckBfClass]["state"] = VERTEX_HIGHLIGHTED;
-                    cs["vl"][vertexCheckBfLeftRightClass]["state"] =
-                      VERTEX_HIGHLIGHTED;
-                    cs["el"][vertexCheckBfClass]["state"] = EDGE_HIGHLIGHTED;
-                    if (iBST["root"] != vertexCheckBfLeftRight)
-                      cs["el"][vertexCheckBfLeftRightClass]["state"] =
-                        EDGE_HIGHLIGHTED;
-                    //cs["status"] = "Relayout the tree.";  //status_insert_10
-                    cs["status"] = "Relayout the tree.";
-                    cs["lineNo"] = 4;
-                    sl.push(cs);
-                  }
-                } else if (bf == -2) {
-                  var vertexCheckBfRight = iBST[vertexCheckBf]["rightChild"];
-                  var vertexCheckBfRightClass =
-                    iBST[vertexCheckBfRight]["vertexClassNumber"];
-                  var bfRight = iBST[vertexCheckBfRight]["balanceFactor"];
-
-                  cs = createState(iBST);
-                  cs["vl"][vertexCheckBfClass]["state"] = VERTEX_HIGHLIGHTED;
-                  cs["vl"][vertexCheckBfClass]["extratext"] = "bf = " + bf;
-                  cs["vl"][vertexCheckBfRightClass]["state"] =
-                    VERTEX_HIGHLIGHTED;
-                  cs["vl"][vertexCheckBfRightClass]["extratext"] =
-                    "bf = " + bfRight;
-                  //cs["status"] = "And balance factor of " + vertexCheckBfRight + " is " + bfRight + ".";  //status_insert_8
-                  cs["status"] =
-                    "And balance factor of {vertexCheckBf} is {bf}."
-                      .replace("{vertexCheckBf}", vertexCheckBfRight)
-                      .replace("{bf}", bfRight);
-                  cs["lineNo"] = 2;
-                  sl.push(cs);
-
-                  if (bfRight == 1) {
-                    var vertexCheckBfRightLeft =
-                      iBST[vertexCheckBfRight]["leftChild"];
-                    var vertexCheckBfRightLeftClass =
-                      iBST[vertexCheckBfRightLeft]["vertexClassNumber"];
-
-                    rotateRight(vertexCheckBfRight);
-
-                    cs = createState(iBST);
-                    cs["vl"][vertexCheckBfRightClass]["state"] =
-                      VERTEX_HIGHLIGHTED;
-                    cs["vl"][vertexCheckBfRightLeftClass]["state"] =
-                      VERTEX_HIGHLIGHTED;
-                    cs["el"][vertexCheckBfRightClass]["state"] =
-                      EDGE_HIGHLIGHTED;
-                    cs["el"][vertexCheckBfRightLeftClass]["state"] =
-                      EDGE_HIGHLIGHTED;
-                    //cs["status"] = "Rotate right " + vertexCheckBfRight + ".";  //status_insert_9
-                    cs["status"] = "Rotate right {vertexCheckBf}.".replace(
-                      "{vertexCheckBf}",
-                      vertexCheckBfRight
-                    );
-                    cs["lineNo"] = 6;
-                    sl.push(cs);
-
-                    recalculatePosition();
-
-                    cs = createState(iBST);
-                    cs["vl"][vertexCheckBfRightClass]["state"] =
-                      VERTEX_HIGHLIGHTED;
-                    cs["vl"][vertexCheckBfRightLeftClass]["state"] =
-                      VERTEX_HIGHLIGHTED;
-                    cs["el"][vertexCheckBfRightClass]["state"] =
-                      EDGE_HIGHLIGHTED;
-                    cs["el"][vertexCheckBfRightLeftClass]["state"] =
-                      EDGE_HIGHLIGHTED;
-                    //cs["status"] = "Relayout the tree.";  //status_insert_10
-                    cs["status"] = "Relayout the tree.";
-                    cs["lineNo"] = 6;
-                    sl.push(cs);
-
-                    rotateLeft(vertexCheckBf);
-
-                    cs = createState(iBST);
-                    cs["vl"][vertexCheckBfClass]["state"] = VERTEX_HIGHLIGHTED;
-                    cs["vl"][vertexCheckBfRightLeftClass]["state"] =
-                      VERTEX_HIGHLIGHTED;
-                    cs["el"][vertexCheckBfClass]["state"] = EDGE_HIGHLIGHTED;
-                    if (iBST["root"] != vertexCheckBfRightLeft)
-                      cs["el"][vertexCheckBfRightLeftClass]["state"] =
-                        EDGE_HIGHLIGHTED;
-                    //cs["status"] = "Rotate left " + vertexCheckBf + ".";  //status_insert_11
-                    cs["status"] = "Rotate left {vertexCheckBf}.".replace(
-                      "{vertexCheckBf}",
-                      vertexCheckBf
-                    );
-                    cs["lineNo"] = 6;
-                    sl.push(cs);
-
-                    recalculatePosition();
-
-                    cs = createState(iBST);
-                    cs["vl"][vertexCheckBfClass]["state"] = VERTEX_HIGHLIGHTED;
-                    cs["vl"][vertexCheckBfRightLeftClass]["state"] =
-                      VERTEX_HIGHLIGHTED;
-                    cs["el"][vertexCheckBfClass]["state"] = EDGE_HIGHLIGHTED;
-                    if (iBST["root"] != vertexCheckBfRightLeft)
-                      cs["el"][vertexCheckBfRightLeftClass]["state"] =
-                        EDGE_HIGHLIGHTED;
-                    //cs["status"] = "Relayout the tree.";  //status_insert_10
-                    cs["status"] = "Relayout the tree.";
-                    cs["lineNo"] = 6;
-                    sl.push(cs);
-                  } else if (bfRight == -1 || bfRight == 0) {
-                    rotateLeft(vertexCheckBf);
-
-                    cs = createState(iBST);
-                    cs["vl"][vertexCheckBfClass]["state"] = VERTEX_HIGHLIGHTED;
-                    cs["vl"][vertexCheckBfRightClass]["state"] =
-                      VERTEX_HIGHLIGHTED;
-                    cs["el"][vertexCheckBfClass]["state"] = EDGE_HIGHLIGHTED;
-                    if (iBST["root"] != vertexCheckBfRight)
-                      cs["el"][vertexCheckBfRightClass]["state"] =
-                        EDGE_HIGHLIGHTED;
-                    //cs["status"] = "Rotate left " + vertexCheckBf + ".";  //status_insert_11
-                    cs["status"] = "Rotate left {vertexCheckBf}.".replace(
-                      "{vertexCheckBf}",
-                      vertexCheckBf
-                    );
-                    cs["lineNo"] = 5;
-                    sl.push(cs);
-
-                    recalculatePosition();
-
-                    cs = createState(iBST);
-
-                    cs["vl"][vertexCheckBfClass]["state"] = VERTEX_HIGHLIGHTED;
-                    cs["vl"][vertexCheckBfRightClass]["state"] =
-                      VERTEX_HIGHLIGHTED;
-                    cs["el"][vertexCheckBfClass]["state"] = EDGE_HIGHLIGHTED;
-                    if (iBST["root"] != vertexCheckBfRight)
-                      cs["el"][vertexCheckBfRightClass]["state"] =
-                        EDGE_HIGHLIGHTED;
-                    cs["status"] = "Relayout the tree."; //status_insert_10
-                    cs["status"] = "Relayout the tree.";
-                    cs["lineNo"] = 5;
-                    sl.push(cs);
-                  }
-                }
-
-                if (vertexCheckBf != iBST["root"]) {
-                  cs = createState(iBST);
-                  cs["el"][vertexCheckBfClass]["state"] = EDGE_HIGHLIGHTED;
-                  //cs["status"] = "Check the parent vertex.";  //status_insert_12
-                  cs["status"] = "Check the parent vertex.";
-                  cs["lineNo"] = 2;
-                  sl.push(cs);
-                }
-
-                vertexCheckBf = iBST[vertexCheckBf]["parent"];
-              }
-
-              cs = createState(iBST);
-              //cs["status"] = "The tree is now balanced."; //status_insert_13
-              cs["status"] = "The tree is now balanced.";
-              cs["lineNo"] = 7;
-              sl.push(cs);
-            }
           }
 
           gw.startAnimation(sl, callback);
