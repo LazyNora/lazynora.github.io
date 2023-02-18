@@ -1923,7 +1923,7 @@
               }
               cs["vl"][key]["extratext"] = "v";
               cs["vl"][currentVertexClass]["extratext"] =
-                (isPred ? "tiền nhiệm" : "kế nhiệm") + " của v";
+                (isPred ? "predecessor" : "successor") + " of v";
               cs["lineNo"] = 1;
               sl.push(cs);
             } else {
@@ -1947,7 +1947,7 @@
               }
               cs["vl"][key]["extratext"] = "v";
               cs["vl"][subTreeRootKey]["extratext"] =
-                (isPred ? "tiền nhiệm" : "kế nhiệm") + " của v";
+                (isPred ? "predecessor" : "successor") + " of v";
               cs["lineNo"] = 1;
               sl.push(cs);
             }
@@ -2010,7 +2010,7 @@
                 }
                 cs["vl"][key]["extratext"] = "v";
                 cs["vl"][currentVertexClass]["extratext"] =
-                  (isPred ? "tiền nhiệm" : "kế nhiệm") + " of v";
+                  (isPred ? "predecessor" : "successor") + " of v";
                 cs["lineNo"] = 7;
                 sl.push(cs);
                 break;
