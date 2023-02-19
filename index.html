@@ -355,7 +355,7 @@
     </style>
     <style>
       .predsucc {
-        bottom: 250px;
+        bottom: 270px;
       }
     </style>
     <style>
@@ -442,7 +442,7 @@
           <input
             id="v-search"
             type="number"
-            title="Enter an Integer"
+            title="Nhập một số nguyên"
             autocomplete="off"
             min="0"
             max="99"
@@ -464,9 +464,9 @@
           <input
             id="v-insert"
             type="text"
-            title="Enter an Integer or comma-separated array of Integers"
+            title="Nhập một số hoặc dãy số nguyên cách nhau bởi dấu phẩy"
             autocomplete="off"
-            value="1,67,35,81"
+            value="1,35"
           />
         </div>
         <div
@@ -484,9 +484,9 @@
           <input
             id="v-remove"
             type="text"
-            title="Enter an Integer or comma-separated array of Integers"
+            title="Nhập một số hoặc dãy số nguyên cách nhau bởi dấu phẩy"
             autocomplete="off"
-            value="1,81"
+            value="1,35"
           />
         </div>
         <div
@@ -504,7 +504,7 @@
           <input
             id="v-predsucc"
             type="number"
-            title="Enter an Integer"
+            title="Nhập một số nguyên"
             autocomplete="off"
             min="0"
             max="99"
@@ -545,7 +545,7 @@
         <div
           id="postorder-go"
           class="execAction new-menu-option coloured-menu-option"
-          onClick="alert('postorder traversal will be added soon')"
+          onClick="postorderTraversal()"
         >
           <p>Postorder</p>
         </div>
@@ -560,14 +560,22 @@
       <span class="close-overlay">&#x2715;</span>
       <div class="content">
         <p>
-          Một cây nhị phân tìm kiếm (Binary Search Tree/BST) là cây nhị phân mà mỗi nút chỉ có tối đa 2 nhánh (bậc mỗi nút tối đa bằng 2) thỏa mãn tính chất của một BST: Tất cả các nút trong cây con bên trái của một nút phải giữ một giá trị khóa nhỏ hơn giá trị khóa của chính nó và tất cả các nút trong cây con bên phải của một nút phải giữ giá trị khóa lớn hơn giá trị khóa của chính nó (không có hiện tượng trùng khóa).
+          Một cây nhị phân tìm kiếm (Binary Search Tree/BST) là cây nhị phân mà
+          mỗi nút chỉ có tối đa 2 nhánh (bậc mỗi nút tối đa bằng 2) thỏa mãn
+          tính chất của một BST: Tất cả các nút trong cây con bên trái của một
+          nút phải giữ một giá trị khóa nhỏ hơn giá trị khóa của chính nó và tất
+          cả các nút trong cây con bên phải của một nút phải giữ giá trị khóa
+          lớn hơn giá trị khóa của chính nó (không có hiện tượng trùng khóa).
         </p>
         <p>
-          Nút ở bên trái nhất là nút có giá trị khóa nhận diện nhỏ nhất và nút ở bên phải nhất là nút có giá trị khóa nhận diện lớn nhất.
+          Nút ở bên trái nhất là nút có giá trị khóa nhận diện nhỏ nhất và nút ở
+          bên phải nhất là nút có giá trị khóa nhận diện lớn nhất.
         </p>
         <p>
-          Với cây có n nút thì chi phí tìm kiếm trung bình là log2(n), độ phức tạp của thuật toán là O(log(n))
+          Với cây có n nút thì chi phí tìm kiếm trung bình là log2(n), độ phức
+          tạp của thuật toán là O(log(n))
         </p>
+        <p></p><p></p><p>CTDL & GT - HUFI - BST</p>
       </div>
     </div>
 
@@ -592,40 +600,7 @@
             });
           } else
             alert(
-              "Sorry, this dialog is too big. Please load it on bigger screen"
-            );
-        });
-
-        $("#trigger-team").click(function () {
-          if ($(window).width() > 600) {
-            $("#dark-overlay").fadeIn(function () {
-              $("#team").fadeIn();
-            });
-          } else
-            alert(
-              "Sorry, this dialog is too big. Please load it on bigger screen"
-            );
-        });
-
-        $("#trigger-terms").click(function () {
-          if ($(window).width() > 600) {
-            $("#dark-overlay").fadeIn(function () {
-              $("#termsofuse").fadeIn();
-            });
-          } else
-            alert(
-              "Sorry, this dialog is too big. Please load it on bigger screen"
-            );
-        });
-
-        $("#trigger-privacy").click(function () {
-          if ($(window).width() > 600) {
-            $("#dark-overlay").fadeIn(function () {
-              $("#privacy-policy").fadeIn();
-            });
-          } else
-            alert(
-              "Sorry, this dialog is too big. Please load it on bigger screen"
+              "Xin lỗi, hộp thoại này quá lớn. Vui lòng tải nó trên màn hình lớn hơn"
             );
         });
 
@@ -705,11 +680,7 @@
       function commonAction(retval, msg) {
         if (retval) {
           $("#current-action").show();
-          $("#current-action").html(
-            mode == "exploration"
-              ? msg
-              : "e-Lecture Example (auto play until done)<br>" + msg
-          );
+          $("#current-action").html(msg);
           $("#progress-bar").slider(
             "option",
             "max",
@@ -792,18 +763,6 @@
         "//www.google-analytics.com/analytics.js",
         "ga"
       );
-
-      function setCookie(cname, cvalue, exdays) {
-        const d = new Date();
-        d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
-        let expires = "expires=" + d.toUTCString();
-        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-      }
-
-      $(function () {
-        ga("create", "UA-1566631-4", "auto");
-        ga("send", "pageview");
-      });
     </script>
 
     <script src="/js/jquery-ui.min.js"></script>
@@ -999,83 +958,6 @@
         );
       });
 
-      function doButtonAction1() {
-        CUSTOM_ACTION("search", 7);
-      }
-      function doButtonAction2() {
-        CUSTOM_ACTION("search", 23);
-      }
-      function doButtonAction3() {
-        CUSTOM_ACTION("search", 21);
-      }
-      function doButtonAction4() {
-        $("#v-search").val(64);
-        mode = "exploration";
-        cur_slide = 1;
-        $(".tutorial-dialog#tutorial-4").fadeOut(100);
-        searchVertex(function () {
-          mode = "tutorial";
-          $(".tutorial-dialog#tutorial-4").fadeIn(100);
-        });
-      }
-      function doButtonAction5() {
-        CUSTOM_ACTION("search", 100);
-      }
-      function doButtonAction6() {
-        CUSTOM_ACTION("successor", 23);
-      }
-      function doButtonAction52() {
-        CUSTOM_ACTION("findmin");
-      }
-      function doButtonAction53() {
-        CUSTOM_ACTION("findmax");
-      }
-      function doButtonAction54() {
-        CUSTOM_ACTION("successor", 7);
-      }
-      function doButtonAction55() {
-        CUSTOM_ACTION("successor", 71);
-      }
-      function doButtonAction56() {
-        CUSTOM_ACTION("predecessor", 6);
-      }
-      function doButtonAction57() {
-        CUSTOM_ACTION("predecessor", 50);
-      }
-      function doButtonAction58() {
-        CUSTOM_ACTION("predecessor", 4);
-      }
-      function doButtonAction59() {
-        CUSTOM_ACTION("inorder");
-      }
-      function doButtonAction60() {
-        CUSTOM_ACTION("insert", 60);
-      }
-      function doButtonAction61() {
-        CUSTOM_ACTION("remove", 5);
-      }
-      function doButtonAction62() {
-        CUSTOM_ACTION("remove", 23);
-      }
-      function doButtonAction63() {
-        CUSTOM_ACTION("remove", 6);
-      }
-      function doButtonAction64() {
-        CUSTOM_ACTION("successor_max");
-      }
-      function doButtonAction65() {
-        CUSTOM_ACTION("insert_max_plus_1");
-      }
-      function doButtonAction66() {
-        CUSTOM_ACTION("remove_max");
-      }
-      function doButtonAction68() {
-        CUSTOM_ACTION("remove", 7);
-      }
-      function doButtonAction69() {
-        CUSTOM_ACTION("insert", 37);
-        $(this).hide();
-      }
       function adjustPopupToImageSize() {
         var width = $("#popup-image").prop("width");
         var height = $("#popup-image").prop("height");
@@ -1097,8 +979,6 @@
         window.open(url, "_blank");
       }
 
-      // Lecture action functions
-      function CUSTOM_ACTION(action, data, mode) {}
 
       $(document).ready(function () {
         setTimeout(function () {
@@ -1259,20 +1139,15 @@
       });
     </script>
     <script type="text/javascript">
-      // BST Widget, also includes AVL tree
-      // original author: Ivan Reinaldo, then maintained by Steven Halim
-
+      
       var BST = function () {
         var self = this;
         var gw = new GraphWidget();
-        var isAVL = false;
 
         var valueRange = [1, 999]; // Range of valid values of BST vertexes allowed
         var maxHeightAllowed = 9; // max 9 edges (10 vertices)
 
-        var initialArray = [15, 6, 23, 4, 7, 71, 5, 50];
-        var initialAvlArray = [15, 6, 50, 4, 7, 23, 71, 5];
-
+        var initialArray = [14, 6, 23, 4, 7, 71, 5, 51];
         /*
          * iBST: Internal representation of BST in this object
          * The keys are the text of the nodes, and the value is the attributes of the corresponding node encapsulated in a JS object, which are:
@@ -1292,8 +1167,7 @@
         var amountVertex = 0;
         iBST["root"] = null;
 
-        if (isAVL) init(initialAvlArray);
-        else init(initialArray);
+        init(initialArray);
 
         this.getGraphWidget = function () {
           return gw;
@@ -1398,12 +1272,6 @@
         };
 
         this.generateExample = function (id) {
-          if (isAVL && id == 1) {
-            $("#create-err").html(
-              "AVL trees are balanced. This example is not balanced."
-            );
-            return false;
-          }
           var vertexAmt = 8; // for id == 1
           var initArr = [15, 6, 23, 4, 7, 71, 5, 50];
           if (id == 2) {
@@ -1436,65 +1304,31 @@
               // distinct
               initArr.push(random);
           }
-
-          if (isAVL) {
-            var initArrAvl = [];
-
-            function recursion(startVal, endVal) {
-              var total = startVal + endVal + 1;
-              if (total < 1) return;
-              if (startVal > endVal) return;
-              if (total == 1) initArrAvl.push(initArr[startVal]);
-              else if (total % 2 != 0) {
-                initArrAvl.push(initArr[parseInt(total / 2)]);
-                recursion(startVal, parseInt(total / 2) - 1);
-                recursion(parseInt(total / 2) + 1, endVal);
-              } else {
-                initArrAvl.push(initArr[parseInt(total / 2) - 1]);
-                recursion(startVal, parseInt(total / 2) - 2);
-                recursion(parseInt(total / 2), endVal);
-              }
+          // from https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+          function shuffle(array) {
+            let currentIndex = array.length,
+              randomIndex;
+            // while there remain elements to shuffle...
+            while (currentIndex != 0) {
+              // pick a remaining element...
+              randomIndex = Math.floor(Math.random() * currentIndex);
+              --currentIndex;
+              // and swap it with the current element.
+              [array[currentIndex], array[randomIndex]] = [
+                array[randomIndex],
+                array[currentIndex],
+              ];
             }
-
-            function sortNumber(a, b) {
-              return a - b;
-            }
-            initArr.sort(sortNumber);
-            recursion(0, initArr.length - 1);
-            init(initArrAvl);
-          } else {
-            // from https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
-            function shuffle(array) {
-              let currentIndex = array.length,
-                randomIndex;
-              // while there remain elements to shuffle...
-              while (currentIndex != 0) {
-                // pick a remaining element...
-                randomIndex = Math.floor(Math.random() * currentIndex);
-                --currentIndex;
-                // and swap it with the current element.
-                [array[currentIndex], array[randomIndex]] = [
-                  array[randomIndex],
-                  array[currentIndex],
-                ];
-              }
-              return array;
-            }
-
-            shuffle(initArr);
-            init(initArr);
+            return array;
           }
+
+          shuffle(initArr);
+          init(initArr);
 
           return true;
         };
 
         this.generateSkewed = function (side) {
-          if (isAVL) {
-            $("#create-err").html(
-              "AVL trees are not skewed. Select the BST header to use this action."
-            );
-            return false;
-          } else {
             var vertexAmt = Math.floor(5 + Math.random() * 5); // [5..9] vertices (allow +1 for one more right/left extreme insertion)
             var initArr = new Array();
             while (initArr.length < vertexAmt) {
@@ -1512,27 +1346,7 @@
             }
             init(initArr);
             return true;
-          }
-        };
-
-        this.isAVL = function (bool) {
-          if (typeof bool != "boolean") return;
-
-          if (bool != isAVL) {
-            clearScreen();
-            /*
-      if (bool)
-        init(initialAvlArray);
-      else
-        init(initialArray);
-*/
-            isAVL = bool;
-            this.generateRandom(); // better randomized than the fixed example below
-          }
-        };
-
-        this.getIsAVL = function () {
-          return isAVL;
+          
         };
 
         this.getRandomInBST = function () {
@@ -1550,9 +1364,9 @@
             if (key == "root") continue;
             arr.push(parseInt(key));
           }
-          var candidate = 1 + Math.floor(Math.random() * 999); // [1..999]
+          var candidate = 1 + Math.floor(Math.random() * 99); // [1..99]
           while ($.inArray(candidate, arr) > 0)
-            candidate = 1 + Math.floor(Math.random() * 999);
+            candidate = 1 + Math.floor(Math.random() * 99);
           return candidate;
         };
 
@@ -1567,7 +1381,7 @@
             ans;
 
           cs = createState(iBST);
-          cs["status"] = "Cây BST hiện tại.";  //status_search_0
+          cs["status"] = "Cây BST hiện tại (root)."; //status_search_0
           cs["lineNo"] = 0;
           sl.push(cs);
 
@@ -1684,7 +1498,7 @@
 
           cs = createState(iBST);
           //status_minmax_0
-          cs["status"] = "Cây BST hiện tại";
+          cs["status"] = "Cây BST hiện tại (root).";
           cs["lineNo"] = 0;
           sl.push(cs);
 
@@ -1754,10 +1568,12 @@
             cs["el"][edgeHighlighted]["state"] = EDGE_TRAVERSED;
             if (isMin) {
               //cs["status"] = "Go left to check for smaller value..."; //status_minmax_7
-              cs["status"] = "Chuyển qua nhánh trái để kiểm tra giá trị nhỏ hơn...";
+              cs["status"] =
+                "Chuyển qua nhánh trái để kiểm tra giá trị nhỏ hơn...";
             } else {
               //cs["status"] = "Go right to check for larger value..."; //status_minmax_8
-              cs["status"] = "Chuyển qua nhánh phải để kiểm tra giá trị lớn hơn...";
+              cs["status"] =
+                "Chuyển qua nhánh phải để kiểm tra giá trị lớn hơn...";
             }
 
             cs["lineNo"] = 3;
@@ -1786,16 +1602,14 @@
           }
 
           if (iBST[val] == null) {
-            $("#predsucc-err").html(
-              "Hãy điền một giá trị đã có trong BST!"
-            );
+            $("#predsucc-err").html("Hãy điền một giá trị đã có trong BST!");
             return false;
           }
 
           key = iBST[val]["vertexClassNumber"];
           cs = createState(iBST);
           //status_predsucc_0
-          cs["status"] = "Cây BST hiện tại.";
+          cs["status"] = "Cây BST hiện tại (root).";
           cs["lineNo"] = 0;
           sl.push(cs);
 
@@ -1894,10 +1708,12 @@
                 cs["el"][edgeHighlighted]["state"] = EDGE_TRAVERSED;
                 if (isPred) {
                   //status_predsucc_9
-                  cs["status"] = "Chuyển qua nhánh phải để kiểm tra giá trị lớn hơn.";
+                  cs["status"] =
+                    "Chuyển qua nhánh phải để kiểm tra giá trị lớn hơn.";
                 } else {
                   //status_predsucc_10
-                  cs["status"] = "Chuyển qua nhánh trái để kiểm tra giá trị nhỏ hơn.";
+                  cs["status"] =
+                    "Chuyển qua nhánh trái để kiểm tra giá trị nhỏ hơn.";
                 }
                 cs["lineNo"] = 1;
                 sl.push(cs);
@@ -1961,10 +1777,12 @@
             cs["el"][currentVertexClass]["state"] = EDGE_HIGHLIGHTED;
             if (isPred) {
               //cs["status"] = "No left child found, so check the parent..";  //status_predsucc_15
-              cs["status"] = "Không tìm thấy nút con trái, vì vậy kiểm tra nút cha..";
+              cs["status"] =
+                "Không tìm thấy nút con trái, vì vậy kiểm tra nút cha..";
             } else {
               //cs["status"] = "No right child found, so check the parent.."; //status_predsucc_16
-              cs["status"] = "Khong tìm thấy nút con phải, vì vậy kiểm tra nút cha..";
+              cs["status"] =
+                "Khong tìm thấy nút con phải, vì vậy kiểm tra nút cha..";
             }
             cs["lineNo"] = [2, 3];
             sl.push(cs);
@@ -2074,7 +1892,7 @@
 
           cs = createState(iBST);
           //cs["status"] = "The current BST.";  //status_inorder_0
-          cs["status"] = "Cây BST hiện tại.";
+          cs["status"] = "Cây BST hiện tại (root).";
           cs["lineNo"] = 0;
           sl.push(cs);
 
@@ -2083,8 +1901,7 @@
           if (iBST["root"] == null) {
             cs = createState(iBST);
             //cs["status"] = "The Binary Search Tree is empty.<br>Return empty result.";  //status_inorder_1
-            cs["status"] =
-              "Cây BST rỗng.<br>Trả về giá trị rỗng.";
+            cs["status"] = "Cây BST rỗng.<br>Trả về giá trị rỗng.";
             cs["lineNo"] = [1, 2];
             sl.push(cs);
             return true;
@@ -2106,10 +1923,11 @@
             cs["vl"][key]["state"] = VERTEX_TRAVERSED;
             cs["vl"][key]["extratext"] = "root";
             //cs["status"] = "So recurse and check left child of " + iBST["root"] + ".";  //status_inorder_3
-            cs["status"] = "Vì vậy lặp lại và kiểm tra nút con bên trái của {root}.".replace(
-              "{root}",
-              iBST["root"]
-            );
+            cs["status"] =
+              "Vì vậy đệ quy và kiểm tra nút con bên trái của {root}.".replace(
+                "{root}",
+                iBST["root"]
+              );
             cs["lineNo"] = 3;
             sl.push(cs);
 
@@ -2164,7 +1982,7 @@
               inorderHighlightVertex(key);
               //cs["status"] = "So recurse and check left child of vertex with value " + curLeft + ".";//status_inorder_7
               cs["status"] =
-                "Vì vậy lập lại và kiểm tra nút con bên trái của nút {curLeft}.".replace(
+                "Vì vậy đệ quy và kiểm tra nút con bên trái của nút {curLeft}.".replace(
                   "{curLeft}",
                   curLeft
                 );
@@ -2177,7 +1995,12 @@
             vertexHighlighted[key] = true;
             inorderHighlightVertex(key);
             in_list = in_list + cur + ",";
-            cs["status"] = "Gặp nút " + cur + "  và chuẩn bị để chuyển sang nhánh con bên phải.<br>Theo thứ tự: " + in_list + "..."; //status_inorder_8
+            cs["status"] =
+              "Gặp nút " +
+              cur +
+              "  và chuẩn bị để chuyển sang nhánh con bên phải.<br>In-order: " +
+              in_list +
+              "..."; //status_inorder_8
             //cs["status"] = 'Visit vertex with value {cur}.<br>And preparing to visit the right child of this vertex.'.replace("{cur}", cur);
             cs["lineNo"] = 4;
             sl.push(cs);
@@ -2211,7 +2034,7 @@
               cs["el"][curRightClass]["animateHighlighted"] = true;
               inorderHighlightVertex(key);
               cs["status"] =
-                "Vì vậy lặp lại và kiểm tra nút con bên phải của nút {curRight}.".replace(
+                "Vì vậy đệ quy và kiểm tra nút con bên phải của nút {curRight}.".replace(
                   "{curRight}",
                   curRight
                 );
@@ -2253,7 +2076,7 @@
           var vertexHighlighted = {};
 
           cs = createState(iBST);
-          cs["status"] = "Bắt đầu Pre-order"; //'The current BST.';
+          cs["status"] = "Cây BST hiện tại (root)."; //'The current BST.';
           cs["lineNo"] = 0;
           sl.push(cs);
 
@@ -2261,8 +2084,7 @@
 
           if (iBST["root"] == null) {
             cs = createState(iBST);
-            cs["status"] =
-              "Cây BST rỗng.<br>Trả về giá trị rỗng."; //status_preorder_1
+            cs["status"] = "Cây BST rỗng.<br>Trả về giá trị rỗng."; //status_preorder_1
             //cs["status"] = 'The Binary Search Tree is empty.<br>Return empty result.';
             cs["lineNo"] = [1, 2];
             sl.push(cs);
@@ -2273,7 +2095,8 @@
             cs = createState(iBST);
             cs["vl"][key]["state"] = VERTEX_TRAVERSED;
             cs["vl"][key]["extratext"] = "root";
-            cs["status"] = "Gốc " + iBST["root"] + " không phải là giá trị rỗng."; //status_preorder_2
+            cs["status"] =
+              "Gốc " + iBST["root"] + " không phải là giá trị rỗng."; //status_preorder_2
             //cs["status"] = 'The root {root} is not null.'.replace("{root}", iBST["root"]);
             cs["lineNo"] = 1;
             sl.push(cs);
@@ -2302,7 +2125,12 @@
             vertexHighlighted[key] = true;
             preorderHighlightVertex(key);
             pre_list = pre_list + cur + ",";
-            cs["status"] = "Gặp nút " + cur + " và chuẩn bị chuyển sang cây con bên trái.<br>Pre-order: " + pre_list + "..."; //status_preorder_8
+            cs["status"] =
+              "Gặp nút " +
+              cur +
+              " và chuẩn bị chuyển sang cây con bên trái.<br>Pre-Order: " +
+              pre_list +
+              "..."; //status_preorder_8
             //cs["status"] = 'Visit vertex with value {cur}.<br>And preparing to visit the right child of this vertex.'.replace("{cur}", cur);
             cs["lineNo"] = 3;
             sl.push(cs);
@@ -2338,7 +2166,7 @@
               cs["el"][curLeftClass]["animateHighlighted"] = true;
               preorderHighlightVertex(key);
               cs["status"] =
-                "Vì vậy lập lại và kiểm tra nút con bên trái của nút " +
+                "Vì vậy đệ quy và kiểm tra nút con bên trái của nút " +
                 curLeft +
                 "."; //status_preorder_7
               //cs["status"] = 'So recurse and check left child of vertex with value {curLeft}.'.replace("{curLeft}", curLeft);
@@ -2377,7 +2205,7 @@
               cs["el"][curRightClass]["animateHighlighted"] = true;
               preorderHighlightVertex(key);
               cs["status"] =
-                "Vì vậy lặp lại và kiểm tra nút con bên phải của nút " +
+                "Vì vậy đệ quy và kiểm tra nút con bên phải của nút " +
                 curRight +
                 "."; //status_preorder_7
               //cs["status"] = 'So recurse and check the right child of vertex with value {curRight}.'.replace("{curRight}", curRight);
@@ -2406,6 +2234,174 @@
           return true;
         };
 
+        this.postorderTraversal = function (callback) {
+          var sl = [],
+            vertexTraversed = {},
+            edgeTraversed = {},
+            cur = iBST["root"],
+            cs,
+            key;
+          var vertexHighlighted = {};
+
+          cs = createState(iBST);
+          cs["status"] = "Cây BST hiện tại (root)."; //'The current BST.';
+          cs["lineNo"] = 0;
+          sl.push(cs);
+
+          var post_list = "";
+
+          if (iBST["root"] == null) {
+            cs = createState(iBST);
+            cs["status"] = "Cây BST rỗng.<br>Trả về giá trị rỗng."; //status_preorder_1
+            //cs["status"] = 'The Binary Search Tree is empty.<br>Return empty result.';
+            cs["lineNo"] = [1, 2];
+            sl.push(cs);
+            return true;
+          } else {
+            key = iBST[iBST["root"]]["vertexClassNumber"];
+
+            cs = createState(iBST);
+            cs["vl"][key]["state"] = VERTEX_TRAVERSED;
+            cs["vl"][key]["extratext"] = "root";
+            cs["status"] =
+              "Gốc " + iBST["root"] + " không phải là giá trị rỗng."; //status_preorder_2
+            //cs["status"] = 'The root {root} is not null.'.replace("{root}", iBST["root"]);
+            cs["lineNo"] = 1;
+            sl.push(cs);
+
+            postorderTraversalRecursion(iBST["root"]);
+          }
+
+          cs = createState(iBST, vertexTraversed, edgeTraversed);
+          postorderHighlightVertex(key);
+          cs["status"] =
+            "Quá trình duyệt theo Post-order của toàn bộ BST đã hoàn tất.<br>Kết quả: " +
+            post_list.slice(0, -1); //status_preorder_4
+          //cs["status"] = 'In-order traversal of the whole BST is complete.';
+          cs["vl"][key]["extratext"] = "root";
+          cs["lineNo"] = 0;
+          sl.push(cs);
+
+          gw.startAnimation(sl, callback);
+
+          function postorderTraversalRecursion(cur) {
+            var curLeft = iBST[cur]["leftChild"],
+              curRight = iBST[cur]["rightChild"];
+            var key = iBST[cur]["vertexClassNumber"];
+
+            if (curLeft == null) {
+              vertexTraversed[cur] = true;
+              cs = createState(iBST, vertexTraversed, edgeTraversed);
+              postorderHighlightVertex(key);
+              cs["status"] =
+                "Giá trị của nút con bên trái của nút " +
+                cur +
+                " là rỗng.<br>Trả về rỗng."; //status_preorder_5
+              //cs["status"] = 'The left child of vertex with value {cur} is empty.<br>Return empty.'.replace("{cur}", cur);
+              cs["lineNo"] = [1, 2];
+              sl.push(cs);
+            } else {
+              var curLeftClass = iBST[curLeft]["vertexClassNumber"];
+
+              vertexTraversed[cur] = true;
+              cs = createState(iBST, vertexTraversed, edgeTraversed);
+              postorderHighlightVertex(key);
+              cs["status"] =
+                "Giá trị của nút con bên trái của nút " +
+                cur +
+                " là " +
+                curLeft +
+                " (khác rỗng)."; //status_preorder_6
+              //cs["status"] = 'The left child of vertex with value {cur} is {curLeft} (not null).'.replace("{cur}", cur).replace("{curLeft}", curLeft);
+              cs["lineNo"] = 3;
+              sl.push(cs);
+              edgeTraversed[curLeftClass] = true;
+              cs = createState(iBST, vertexTraversed, edgeTraversed);
+              cs["el"][curLeftClass]["animateHighlighted"] = true;
+              postorderHighlightVertex(key);
+              cs["status"] =
+                "Vì vậy đệ quy và kiểm tra nút con bên trái của nút " +
+                curLeft +
+                "."; //status_preorder_7
+              //cs["status"] = 'So recurse and check left child of vertex with value {curLeft}.'.replace("{curLeft}", curLeft);
+              cs["lineNo"] = 4;
+              sl.push(cs);
+              postorderTraversalRecursion(curLeft);
+            }
+
+            if (curRight == null) {
+              vertexTraversed[cur] = true;
+              cs = createState(iBST, vertexTraversed, edgeTraversed);
+              postorderHighlightVertex(key);
+              cs["status"] =
+                "Giá trị của nút con bên phải của nút " +
+                cur +
+                " là rỗng.<br>Trả về rỗng.<br>"; //status_preorder_9
+              //cs["status"] = 'The right child of vertex with value {cur} is empty.<br>Return empty.<br>'.replace("{cur}", cur);
+              cs["lineNo"] = [1, 2];
+              sl.push(cs);
+            } else {
+              var curRightClass = iBST[curRight]["vertexClassNumber"];
+
+              cs = createState(iBST, vertexTraversed, edgeTraversed);
+              postorderHighlightVertex(key);
+              cs["status"] =
+                "Chuẩn bị gặp nút con bên phải của nút này.<br>Giá trị của nút con bên phải của nút " +
+                cur +
+                " là " +
+                curRight +
+                " (khác rỗng)."; //status_preorder_10
+              //cs["status"] = 'The right child of vertex with value {cur} is {curRight} (not null).'.replace("{cur}", cur).replace("{curRight}", curRight);
+              cs["lineNo"] = 3;
+              sl.push(cs);
+              edgeTraversed[curRightClass] = true;
+              cs = createState(iBST, vertexTraversed, edgeTraversed);
+              cs["el"][curRightClass]["animateHighlighted"] = true;
+              postorderHighlightVertex(key);
+              cs["status"] =
+                "Vì vậy đệ quy và kiểm tra nút con bên phải của nút " +
+                curRight +
+                "."; //status_preorder_7
+              //cs["status"] = 'So recurse and check the right child of vertex with value {curRight}.'.replace("{curRight}", curRight);
+              cs["lineNo"] = 5;
+              sl.push(cs);
+              postorderTraversalRecursion(curRight);
+            }
+
+            cs = createState(iBST, vertexTraversed, edgeTraversed);
+            vertexHighlighted[key] = true;
+            postorderHighlightVertex(key);
+            post_list = post_list + cur + ",";
+            cs["status"] =
+              "Trở lại nút gốc " +
+              cur +
+              "  và chuẩn bị doàn tất quá trình duyệt.<br>Post-Order: " +
+              post_list +
+              "..."; //status_inorder_8
+            //cs["status"] = 'Visit vertex with value {cur}.<br>And preparing to visit the right child of this vertex.'.replace("{cur}", cur);
+            cs["lineNo"] = 4;
+            sl.push(cs);
+
+            cs = createState(iBST, vertexTraversed, edgeTraversed);
+            if (cur != iBST["root"]) cs["el"][key]["state"] = EDGE_HIGHLIGHTED;
+            postorderHighlightVertex(key);
+
+            cs["status"] = "Duyệt theo Post-order của " + cur + " đã hoàn tất."; //status_preorder_12
+            //cs["status"] = 'In-order traversal of {cur} is complete.'.replace("{cur}", cur);
+            cs["lineNo"] = 0;
+            sl.push(cs);
+          }
+
+          function postorderHighlightVertex(curkey) {
+            for (var key in vertexHighlighted)
+              cs["vl"][key]["state"] = VERTEX_HIGHLIGHTED;
+            for (var key in vertexHighlighted) cs["vl"][key]["extratext"] = "";
+            cs["vl"][curkey]["extratext"] = "^";
+          }
+          populatePseudocode(11);
+          return true;
+        };
+
         this.insertArr = function (vertexTextArr, callback) {
           var sl = [],
             vertexTraversed = {},
@@ -2418,7 +2414,7 @@
 
           cs = createState(iBST);
           //cs["status"] = "The current BST.";  //status_insert_0
-          cs["status"] = "Cây BST hiện tại.";
+          cs["status"] = "Cây BST hiện tại (root).";
           cs["lineNo"] = 0;
           sl.push(cs);
 
@@ -2448,7 +2444,9 @@
 
             // 2. No duplicates allowed. Also works if more than one similar value are inserted
             if (tempiBST[vt] != null) {
-              $("#insert-err").html("Không cho phép trùng lặp giá trị của nút!");
+              $("#insert-err").html(
+                "Không cho phép trùng lặp giá trị của nút!"
+              );
               if (typeof callback == "function") callback();
               return false;
             }
@@ -2549,8 +2547,7 @@
               cs["status"] = "So sánh {val} với {cur}"
                 .replace("{val}", val)
                 .replace("{cur}", cur);
-              if (!isAVL) cs["lineNo"] = 3;
-              else cs["lineNo"] = 1;
+              cs["lineNo"] = 3;
 
               sl.push(cs);
 
@@ -2575,15 +2572,13 @@
                 cs["status"] = "{val} lớn hơn {parent}, đi qua phải."
                   .replace("{val}", val)
                   .replace("{parent}", iBST[cur]["parent"]);
-                if (!isAVL) cs["lineNo"] = 5;
-                else cs["lineNo"] = 1;
+                cs["lineNo"] = 5;
               } else {
                 //cs["status"] = val + " is smaller than " + iBST[cur]["parent"] + ", so go left."; //status_insert_3
                 cs["status"] = "{val} nhỏ hơn {parent}, đi qua trái."
                   .replace("{val}", val)
                   .replace("{parent}", iBST[cur]["parent"]);
-                if (!isAVL) cs["lineNo"] = 4;
-                else cs["lineNo"] = 1;
+                cs["lineNo"] = 4;
               }
 
               sl.push(cs);
@@ -2638,14 +2633,12 @@
 
             //cs["status"] = val + " has been inserted!"  //status_insert_5
             cs["status"] = "{val} đã được thêm!".replace("{val}", val);
-            if (!isAVL) cs["lineNo"] = 2;
-            else cs["lineNo"] = 1;
+            cs["lineNo"] = 2;
             sl.push(cs);
           }
 
           gw.startAnimation(sl, callback);
-          if (isAVL) populatePseudocode(6);
-          else populatePseudocode(0);
+          populatePseudocode(0);
           return true;
         };
 
@@ -2660,7 +2653,7 @@
           var i;
 
           //cs["status"] = "The current BST"; //status_remove_0
-          cs["status"] = "Cây BST hiện tại";
+          cs["status"] = "Cây BST hiện tại (root).";
           cs["lineNo"] = 0;
           sl.push(cs);
 
@@ -2707,10 +2700,7 @@
               vertexTraversed[cur] = true;
 
               //cs["status"] = "Searching for node " + val + " to remove";  //status_remove_1
-              cs["status"] = "Đang tìm nút {val} để xóa".replace(
-                "{val}",
-                val
-              );
+              cs["status"] = "Đang tìm nút {val} để xóa".replace("{val}", val);
               cs["lineNo"] = 1;
               sl.push(cs);
 
@@ -2728,10 +2718,7 @@
               cs["el"][edgeHighlighted]["state"] = EDGE_TRAVERSED;
 
               //cs["status"] = "Searching for node " + val + " to remove";  //status_remove_1
-              cs["status"] = "Đang tìm nút {val} để xóa".replace(
-                "{val}",
-                val
-              );
+              cs["status"] = "Đang tìm nút {val} để xóa".replace("{val}", val);
               cs["lineNo"] = 1;
               sl.push(cs);
             }
@@ -2743,10 +2730,7 @@
               cs["vl"][currentVertexClass]["state"] = VERTEX_HIGHLIGHTED;
 
               //cs["status"] = "Searching for node " + val + " to remove";  //status_remove_1
-              cs["status"] = "Đang tìm nút {val} để xóa".replace(
-                "{val}",
-                val
-              );
+              cs["status"] = "Đang tìm nút {val} để xóa".replace("{val}", val);
               cs["lineNo"] = 1;
               sl.push(cs);
             }
@@ -2771,13 +2755,11 @@
             ) {
               cs = createState(iBST, vertexTraversed, edgeTraversed);
               //cs["status"] = "Node " + val + " has no children. It is a leaf."; //status_remove_3
-              cs["status"] =
-                "Nút {val} không có nút con. Là nút lá.".replace(
-                  "{val}",
-                  val
-                );
-              if (!isAVL) cs["lineNo"] = 2;
-              else cs["lineNo"] = 1;
+              cs["status"] = "Nút {val} không có nút con. Là nút lá.".replace(
+                "{val}",
+                val
+              );
+              cs["lineNo"] = 2;
               sl.push(cs);
 
               var parentVertex = iBST[cur]["parent"];
@@ -2797,8 +2779,7 @@
 
               //cs["status"] = "Remove leaf " + val;  //status_remove_4
               cs["status"] = "Xóa nút lá {val}".replace("{val}", val);
-              if (!isAVL) cs["lineNo"] = 3;
-              else cs["lineNo"] = 1;
+              cs["lineNo"] = 3;
               sl.push(cs);
 
               vertexCheckBf = parentVertex;
@@ -2812,8 +2793,7 @@
                 "{val}",
                 val
               );
-              if (!isAVL) cs["lineNo"] = 4;
-              else cs["lineNo"] = 1;
+              cs["lineNo"] = 4;
               sl.push(cs);
 
               var parentVertex = iBST[cur]["parent"];
@@ -2847,8 +2827,7 @@
                   "{val}",
                   val
                 );
-              if (!isAVL) cs["lineNo"] = 5;
-              else cs["lineNo"] = 1;
+              cs["lineNo"] = 5;
               sl.push(cs);
 
               recalculatePosition();
@@ -2862,8 +2841,7 @@
 
               //cs["status"] = "Re-layout the tree";  //status_remove_7
               cs["status"] = "Bố trí lại cây";
-              if (!isAVL) cs["lineNo"] = 5;
-              else cs["lineNo"] = 1;
+              cs["lineNo"] = 5;
               sl.push(cs);
 
               vertexCheckBf = rightChildVertex;
@@ -2875,8 +2853,7 @@
                 "{val}",
                 val
               );
-              if (!isAVL) cs["lineNo"] = 4;
-              else cs["lineNo"] = 1;
+              cs["lineNo"] = 4;
               sl.push(cs);
 
               var parentVertex = iBST[cur]["parent"];
@@ -2909,8 +2886,7 @@
                   "{val}",
                   val
                 );
-              if (!isAVL) cs["lineNo"] = 5;
-              else cs["lineNo"] = 1;
+              cs["lineNo"] = 5;
               sl.push(cs);
 
               recalculatePosition();
@@ -2924,8 +2900,7 @@
 
               //cs["status"] = "Re-layout the tree";  //status_remove_7
               cs["status"] = "Bố trí lại cây";
-              if (!isAVL) cs["lineNo"] = 5;
-              else cs["lineNo"] = 1;
+              cs["lineNo"] = 5;
               sl.push(cs);
 
               vertexCheckBf = leftChildVertex;
@@ -2946,9 +2921,11 @@
               cs["el"][successorVertexClass]["animateHighlighted"] = true;
 
               //cs["status"] = "Finding successor of " + val; //status_remove_10
-              cs["status"] = "Đang tìm nút kế nhiệm của {val}".replace("{val}", val);
-              if (!isAVL) cs["lineNo"] = 6;
-              else cs["lineNo"] = 1;
+              cs["status"] = "Đang tìm nút kế nhiệm của {val}".replace(
+                "{val}",
+                val
+              );
+              cs["lineNo"] = 6;
               sl.push(cs);
 
               edgeTraversed[successorVertexClass] = true;
@@ -2960,9 +2937,11 @@
               cs["vl"][successorVertexClass]["state"] = VERTEX_HIGHLIGHTED;
 
               //cs["status"] = "Finding successor of " + val; //status_remove_10
-              cs["status"] = "Đang tìm nút kế nhiệm của {val}".replace("{val}", val);
-              if (!isAVL) cs["lineNo"] = 6;
-              else cs["lineNo"] = 1;
+              cs["status"] = "Đang tìm nút kế nhiệm của {val}".replace(
+                "{val}",
+                val
+              );
+              cs["lineNo"] = 6;
               sl.push(cs);
 
               while (iBST[successorVertex]["leftChild"] != null) {
@@ -2982,8 +2961,7 @@
                   "{val}",
                   val
                 );
-                if (!isAVL) cs["lineNo"] = 6;
-                else cs["lineNo"] = 1;
+                cs["lineNo"] = 6;
                 sl.push(cs);
 
                 edgeTraversed[successorVertexClass] = true;
@@ -2999,8 +2977,7 @@
                   "{val}",
                   val
                 );
-                if (!isAVL) cs["lineNo"] = 6;
-                else cs["lineNo"] = 1;
+                cs["lineNo"] = 6;
                 sl.push(cs);
               }
 
@@ -3078,12 +3055,12 @@
               }
 
               //cs["status"] = "Replace node " + val + " with its successor"; //status_remove_11
-              cs["status"] = "Thay thế nút {val} với nút kế nhiệm của nó".replace(
-                "{val}",
-                val
-              );
-              if (!isAVL) cs["lineNo"] = 6;
-              else cs["lineNo"] = 1;
+              cs["status"] =
+                "Thay thế nút {val} với nút kế nhiệm của nó".replace(
+                  "{val}",
+                  val
+                );
+              cs["lineNo"] = 6;
               sl.push(cs);
 
               recalculatePosition();
@@ -3115,8 +3092,7 @@
 
               //cs["status"] = "Re-layout the tree";  //status_remove_7
               cs["status"] = "Bố trí lại cây";
-              if (!isAVL) cs["lineNo"] = 6;
-              else cs["lineNo"] = 1;
+              cs["lineNo"] = 6;
               sl.push(cs);
 
               vertexCheckBf = successorVertex;
@@ -3127,15 +3103,12 @@
             cs = createState(iBST);
             //cs["status"] = "Removal of " + val + " completed";  //status_remove_12
             cs["status"] = "Xóa nút {val} hoàn tất".replace("{val}", val);
-            if (!isAVL) cs["lineNo"] = 0;
-            else cs["lineNo"] = 1;
+            cs["lineNo"] = 0;
             sl.push(cs);
-
           }
 
           gw.startAnimation(sl, callback);
-          if (isAVL) populatePseudocode(7);
-          else populatePseudocode(5);
+          populatePseudocode(5);
           return true;
         };
 
@@ -3425,7 +3398,7 @@
             case 1: // findMinMax
             case 2:
               //$('#code1').html('if this is null return empty'); // code_minmax_1
-              $("#code1").html("if this is null return empty");
+              $("#code1").html("if this == null return empty");
               if (act == 1) {
                 //$('#code2').html('if right != null'); // code_max_2
                 //$('#code3').html('&nbsp&nbspgo right'); // code_max_3
@@ -3438,7 +3411,7 @@
                 $("#code3").html("&nbsp;&nbsp;go left");
               }
               //$('#code4').html('else return this key'); // code_minmax_4
-              $("#code4").html("else return this key");
+              $("#code4").html("else return this");
               $("#code5").html("");
               $("#code6").html("");
               $("#code7").html("");
@@ -3449,11 +3422,11 @@
               //$('#code2').html('&nbsp;&nbsp;return null');  //code_search_2
               $("#code2").html("&nbsp;&nbsp;return null");
               //$('#code3').html('else if this key == search value'); //code_search_3
-              $("#code3").html("else if this key == search value");
+              $("#code3").html("else if this == search value");
               //$('#code4').html('&nbsp;&nbsp;return this');  //code_search_4
               $("#code4").html("&nbsp;&nbsp;return this");
               //$('#code5').html('else if this key < search value');  //code_search_5
-              $("#code5").html("else if this key < search value");
+              $("#code5").html("else if this < search value");
               //$('#code6').html('&nbsp;&nbsp;search right'); //code_search_6
               $("#code6").html("&nbsp;&nbsp;search right");
               //$('#code7').html('else search left'); //code_search_7
@@ -3463,9 +3436,9 @@
               //$('#code1').html('if insertion point is found');  //code_insert_1
               $("#code1").html("if insertion point is found");
               //$('#code2').html('&nbsp;&nbsp;create new vertex');  //code_insert_2
-              $("#code2").html("&nbsp;&nbsp;create new vertex");
+              $("#code2").html("&nbsp;&nbsp;create new node");
               //$('#code3').html('if value to be inserted < this key'); //code_insert_3
-              $("#code3").html("if value to be inserted < this key");
+              $("#code3").html("if value to be inserted < this");
               //$('#code4').html('&nbsp;&nbsp;go left');  //code_insert_4
               $("#code4").html("&nbsp;&nbsp;go left");
               //$('#code5').html('else go right');  //code_insert_5
@@ -3477,7 +3450,7 @@
               //$('#code1').html('search for v'); //code_remove_1
               $("#code1").html("search for v");
               //$('#code2').html('if v is a leaf'); //code_remove_2
-              $("#code2").html("if v is a leaf");
+              $("#code2").html("if v is leaf");
               //$('#code3').html('&nbsp;&nbsp;delete leaf v');  //code_remove_3
               $("#code3").html("&nbsp;&nbsp;delete leaf v");
               //$('#code4').html('else if v has 1 child');  //code_remove_4
@@ -3487,32 +3460,6 @@
               //$('#code6').html('else replace v with successor');  //code_remove_6
               $("#code6").html("else replace v with successor");
               $("#code7").html("");
-              break;
-            case 6: // insert with rotations
-            case 7: // remove with rotations
-              if (act == 6) {
-                //$('#code1').html('insert v'); //code_insert_avl_1
-                $("#code1").html("insert v");
-              } else {
-                //$('#code1').html('remove v'); //code_remove_avl_1
-                $("#code1").html("remove v");
-              }
-              //$('#code2').html('check balance factor of this and its children');  //code_avl_2
-              $("#code2").html("check balance factor of this and its children");
-              //$('#code3').html('&nbsp;&nbsp;case1: this.rotateRight');  //code_avl_3
-              $("#code3").html("&nbsp;&nbsp;case1: this.rotateRight");
-              //$('#code4').html('&nbsp;&nbsp;case2: this.left.rotateLeft, this.rotateRight');  //code_avl_4
-              $("#code4").html(
-                "&nbsp;&nbsp;case2: this.left.rotateLeft, this.rotateRight"
-              );
-              //$('#code5').html('&nbsp;&nbsp;case3: this.rotateLeft'); //code_avl_5
-              $("#code5").html("&nbsp;&nbsp;case3: this.rotateLeft");
-              //$('#code6').html('&nbsp;&nbsp;case4: this.right.rotateRight, this.rotateLeft'); //code_avl_6
-              $("#code6").html(
-                "&nbsp;&nbsp;case4: this.right.rotateRight, this.rotateLeft"
-              );
-              //$('#code7').html('&nbsp;&nbsp;this is balanced'); //code_avl_7
-              $("#code7").html("&nbsp;&nbsp;this is balanced");
               break;
             case 8: // successor
             case 9: // predecessor
@@ -3540,33 +3487,34 @@
               //$('#code5').html('&nbsp;&nbsp;&nbsp;&nbsp;T = p, p = T.parent');  //code_predsucc_5
               $("#code5").html("&nbsp;&nbsp;&nbsp;&nbsp;T = p, p = T.parent");
               //$('#code6').html('&nbsp;&nbsp;if p is null return -1'); //code_predsucc_6
-              $("#code6").html("&nbsp;&nbsp;if p is null return -1");
+              $("#code6").html("&nbsp;&nbsp;if p == null return -1");
               //$('#code7').html('&nbsp;&nbsp;else return p');  //code_predsucc_7
               $("#code7").html("&nbsp;&nbsp;else return p");
               break;
             case 3: // inorder traversal
-              //$('#code1').html('if this is null');  //code_inorder_1
-              $("#code1").html("if this is null");
-              //$('#code2').html('&nbsp;&nbsp;return'); //code_inorder_2
-              $("#code2").html("&nbsp;&nbsp;return");
-              //$('#code3').html('inOrder(left)');  //code_inorder_3
-              $("#code3").html("inOrder(left)");
-              $("#code4").html("visit this"); //, then inOrder(right)');  //code_inorder_4, update later
+              $("#code1").html("if this == null");  //code_inorder_1
+              $("#code2").html("&nbsp;&nbsp;return"); //code_inorder_2
+              $("#code3").html("inOrder(left)");  //code_inorder_3
+              $("#code4").html("visit this"); ////code_inorder_4
               $("#code5").html("inOrder(right)");
-              //$('#code5').html('visit this, then inOrder(right)'); // update later
               $("#code6").html("");
               $("#code7").html("");
               break;
             case 10: // preorder traversal
-              $("#code1").html("if this is null"); //code_preorder_1
-              //$('#code1').html('if this is null');
+              $("#code1").html("if this == null"); //code_preorder_1
               $("#code2").html("&nbsp;&nbsp;return"); //code_preorder_2
-              //$('#code2').html('&nbsp;&nbsp;return');
               $("#code3").html("visit this"); //code_preorder_3
-              //$('#code3').html('inOrder(left)');
               $("#code4").html("preOrder(left)"); //code_preorder_4
-              //$('#code4').html('visit this, then inOrder(right)');
               $("#code5").html("preOrder(right)");
+              $("#code6").html("");
+              $("#code7").html("");
+              break;
+              case 11: // postorder traversal
+              $("#code1").html("if this == null"); //code_postorder_1
+              $("#code2").html("&nbsp;&nbsp;return"); //code_postorder_2
+              $("#code3").html("postOrder(left)"); //code_postorder_3
+              $("#code4").html("postOrder(right)"); //code_postorder_4
+              $("#code5").html("visit this");
               $("#code6").html("");
               $("#code7").html("");
               break;
@@ -3575,7 +3523,7 @@
       };
 
       // BSTaction.js
-      var actionsWidth = 250;
+      var actionsWidth = 270;
       var statusCodetraceWidth = 420;
 
       // local
@@ -3606,7 +3554,6 @@
         showActionsPanel();
         showStatusPanel();
         showCodetracePanel();
-        bw.isAVL(false);
       });
 
       function empty() {
@@ -3715,7 +3662,12 @@
 
       function preorderTraversal(callback) {
         if (isPlaying) stop();
-        commonAction(bw.preorderTraversal(callback), "Preorder"); // Inorder Traversal");
+        commonAction(bw.preorderTraversal(callback), "Preorder Traversal");
+      }
+
+      function postorderTraversal(callback) {
+        if (isPlaying) stop();
+        commonAction(bw.postorderTraversal(callback), "Postorder Traversal");
       }
 
       // Implement these functions in each visualisation
@@ -3723,63 +3675,6 @@
         vl: {},
         el: {},
       };
-
-      // Lecture action functions
-      function CUSTOM_ACTION(action, data, mode) {
-        if (action == "search") {
-          hideSlide(function () {
-            $("#v-search").val(data); // force
-            searchVertex(showSlide);
-          });
-        } else if (action == "findmin") {
-          hideSlide(function () {
-            findMinMax(true, showSlide);
-          });
-        } else if (action == "findmax") {
-          hideSlide(function () {
-            findMinMax(false, showSlide);
-          });
-        } else if (action == "successor") {
-          hideSlide(function () {
-            $("#v-predsucc").val(data); // force
-            predsucc(false, showSlide);
-          });
-        } else if (action == "successor_max") {
-          hideSlide(function () {
-            $("#v-predsucc").val(bw.findMax()); // force the max
-            predsucc(false, showSlide);
-          });
-        } else if (action == "predecessor") {
-          hideSlide(function () {
-            $("#v-predsucc").val(data); // force
-            predsucc(true, showSlide);
-          });
-        } else if (action == "inorder") {
-          hideSlide(function () {
-            inorderTraversal(showSlide);
-          });
-        } else if (action == "insert") {
-          hideSlide(function () {
-            $("#v-insert").val(data); // force
-            insertVertex(showSlide);
-          });
-        } else if (action == "insert_max_plus_1") {
-          hideSlide(function () {
-            $("#v-insert").val(bw.findMax() + 1); // force the max plus 1
-            insertVertex(showSlide);
-          });
-        } else if (action == "remove") {
-          hideSlide(function () {
-            $("#v-remove").val(data); // force
-            removeVertex(showSlide);
-          });
-        } else if (action == "remove_max") {
-          hideSlide(function () {
-            $("#v-remove").val(bw.findMax()); // force the max
-            removeVertex(showSlide);
-          });
-        }
-      }
     </script>
   </body>
 </html>
