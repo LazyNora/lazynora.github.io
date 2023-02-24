@@ -1,5 +1,9 @@
 @charset "utf-8";
 @font-face {
+  font-family: cursive;
+  src: url(IndieFlower-Regular.ttf) format("ttf");
+}
+@font-face {
   font-family: pt sans;
   font-style: normal;
   font-weight: 400;
