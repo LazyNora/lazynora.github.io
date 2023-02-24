@@ -175,7 +175,7 @@
           background-color: rgb(0, 0, 0);
           font-family: "PT Sans", sans-serif;
           font-size: 13px;
-          height: 40px;
+          height: 60px;
 
           padding-left: 40px;
           padding-right: 40px;
@@ -196,8 +196,71 @@
           <span style="max-height: 30px">
             <span id="title">
               <a id="title-BST" class="selected-viz"
-                >Binary Search Tree (Cây Nhị Phân Tìm Kiếm)</a
+                >BINARY SEARCH TREE (Cây Nhị Phân Tìm Kiếm)</a
               >
+              <a id="Nora" class="info">
+                <span class="magic">
+                  <span class="magic-star">
+                    <svg viewBox="0 0 674 674">
+                      <g
+                        transform="translate(0.000000,674.000000) scale(0.100000,-0.100000)"
+                        stroke="none"
+                      >
+                        <path
+                          d="M3310 6711 c-74 -23 -138 -80 -171 -156 -10 -22 -147 -558 -305
+                          -1190 -158 -633 -288 -1152 -290 -1154 -2 -2 -524 -133 -1161 -293 -830 -207
+                          -1171 -297 -1206 -315 -198 -109 -188 -380 18 -472 17 -8 552 -145 1190 -305
+                          l1160 -291 291 -1165 c160 -641 300 -1183 312 -1206 45 -87 129 -137 232 -137
+                          108 0 203 59 244 152 9 20 146 558 305 1196 l288 1160 1164 291 c640 160 1180
+                          298 1199 307 19 8 50 30 68 48 145 142 86 383 -109 446 -35 11 -568 146 -1184
+                          298 -616 153 -1125 283 -1131 289 -6 6 -140 528 -298 1159 -179 718 -295 1166
+                          -311 1196 -30 60 -82 110 -137 133 -45 18 -125 22 -168 9z"
+                        ></path>
+                      </g>
+                    </svg>
+                  </span>
+                  <span class="magic-star">
+                    <svg viewBox="0 0 674 674">
+                      <g
+                        transform="translate(0.000000,674.000000) scale(0.100000,-0.100000)"
+                        stroke="none"
+                      >
+                        <path
+                          d="M3310 6711 c-74 -23 -138 -80 -171 -156 -10 -22 -147 -558 -305
+                          -1190 -158 -633 -288 -1152 -290 -1154 -2 -2 -524 -133 -1161 -293 -830 -207
+                          -1171 -297 -1206 -315 -198 -109 -188 -380 18 -472 17 -8 552 -145 1190 -305
+                          l1160 -291 291 -1165 c160 -641 300 -1183 312 -1206 45 -87 129 -137 232 -137
+                          108 0 203 59 244 152 9 20 146 558 305 1196 l288 1160 1164 291 c640 160 1180
+                          298 1199 307 19 8 50 30 68 48 145 142 86 383 -109 446 -35 11 -568 146 -1184
+                          298 -616 153 -1125 283 -1131 289 -6 6 -140 528 -298 1159 -179 718 -295 1166
+                          -311 1196 -30 60 -82 110 -137 133 -45 18 -125 22 -168 9z"
+                        ></path>
+                      </g>
+                    </svg>
+                  </span>
+                  <span class="magic-star">
+                    <svg viewBox="0 0 674 674">
+                      <g
+                        transform="translate(0,674) scale(0.100000,-0.100000)"
+                        stroke="none"
+                      >
+                        <path
+                          d="M3310 6711 c-74 -23 -138 -80 -171 -156 -10 -22 -147 -558 -305
+                          -1190 -158 -633 -288 -1152 -290 -1154 -2 -2 -524 -133 -1161 -293 -830 -207
+                          -1171 -297 -1206 -315 -198 -109 -188 -380 18 -472 17 -8 552 -145 1190 -305
+                          l1160 -291 291 -1165 c160 -641 300 -1183 312 -1206 45 -87 129 -137 232 -137
+                          108 0 203 59 244 152 9 20 146 558 305 1196 l288 1160 1164 291 c640 160 1180
+                          298 1199 307 19 8 50 30 68 48 145 142 86 383 -109 446 -35 11 -568 146 -1184
+                          298 -616 153 -1125 283 -1131 289 -6 6 -140 528 -298 1159 -179 718 -295 1166
+                          -311 1196 -30 60 -82 110 -137 133 -45 18 -125 22 -168 9z"
+                        ></path>
+                      </g>
+                    </svg>
+                  </span>
+                  <span class="magic-text">nora</span>
+                </span>
+                <script src="/js/animate.js"></script>
+              </a>
             </span>
           </span>
         </span>
@@ -258,7 +321,7 @@
           <img
             src="/img/arrow_white_right.png"
             alt=">"
-            title="show/hide codetrace panel"
+            title="show/hide pseudo panel"
           />
         </div>
         <div id="left-bar"></div>
@@ -371,7 +434,7 @@
       <p id="predsucc">Predec-/Succ-essor (Tiền Nhiệm/Kế nhiệm)</p>
       <p id="traverse">Tree Traversal (Duyệt Cây)</p>
     </div>
-    <div id="actions-hide" class="panel-hide">
+    <div id="actions-hide" class="panel-hide" title="show/hide action panel">
       <span style="color: white; font-size: x-large; display: inline-block"
         >&gt;</span
       >
@@ -550,6 +613,27 @@
           <p>Postorder</p>
         </div>
         <div id="traverse-err" class="err" style="float: left"></div>
+        <div
+          id="countall-go"
+          class="execAction new-menu-option coloured-menu-option"
+          onClick="countAll()"
+        >
+          <p>Count All Nodes</p>
+        </div>
+        <div
+          id="countleaf-go"
+          class="execAction new-menu-option coloured-menu-option"
+          onClick="countLeaf()"
+        >
+          <p>Count Leaves</p>
+        </div>
+        <div
+          id="countmedium-go"
+          class="execAction new-menu-option coloured-menu-option"
+          onClick="countMedium()"
+        >
+          <p>Count Medium Nodes</p>
+        </div>
       </div>
     </div>
     <div id="bottom-bar">
@@ -575,7 +659,7 @@
           Với cây có n nút thì chi phí tìm kiếm trung bình là log2(n), độ phức
           tạp của thuật toán là O(log(n))
         </p>
-        <p></p><p></p><p>CTDL & GT - HUFI - BST</p>
+        <p><br><br><br>Visualization Demo Binary Search Tree for Team 6<br>CTDL & GT - HUFI - BST<br>Reference from <a href="https://visualgo.net">visualgo.net</a><br>Remake and update by <a href="https://github.com/lazynora">Nora</a></p>
       </div>
     </div>
 
@@ -979,7 +1063,6 @@
         window.open(url, "_blank");
       }
 
-
       $(document).ready(function () {
         setTimeout(function () {
           $("#change-lang-popup").fadeOut("slow");
@@ -1139,7 +1222,6 @@
       });
     </script>
     <script type="text/javascript">
-      
       var BST = function () {
         var self = this;
         var gw = new GraphWidget();
@@ -1329,24 +1411,23 @@
         };
 
         this.generateSkewed = function (side) {
-            var vertexAmt = Math.floor(5 + Math.random() * 5); // [5..9] vertices (allow +1 for one more right/left extreme insertion)
-            var initArr = new Array();
-            while (initArr.length < vertexAmt) {
-              var random = Math.floor(1 + Math.random() * 99); // value [1..99]
-              if ($.inArray(random, initArr) < 0) initArr.push(random);
-            }
-            if (side == "left") {
-              initArr.sort(function (a, b) {
-                return b - a;
-              });
-            } else if (side == "right") {
-              initArr.sort(function (a, b) {
-                return a - b;
-              });
-            }
-            init(initArr);
-            return true;
-          
+          var vertexAmt = Math.floor(5 + Math.random() * 5); // [5..9] vertices (allow +1 for one more right/left extreme insertion)
+          var initArr = new Array();
+          while (initArr.length < vertexAmt) {
+            var random = Math.floor(1 + Math.random() * 99); // value [1..99]
+            if ($.inArray(random, initArr) < 0) initArr.push(random);
+          }
+          if (side == "left") {
+            initArr.sort(function (a, b) {
+              return b - a;
+            });
+          } else if (side == "right") {
+            initArr.sort(function (a, b) {
+              return a - b;
+            });
+          }
+          init(initArr);
+          return true;
         };
 
         this.getRandomInBST = function () {
@@ -2399,6 +2480,259 @@
             cs["vl"][curkey]["extratext"] = "^";
           }
           populatePseudocode(11);
+          return true;
+        };
+
+        this.countAll = function (callback) {
+          var sl = [],
+            vertexTraversed = {},
+            edgeTraversed = {},
+            cur = iBST["root"],
+            cs,
+            key;
+          var vertexHighlighted = {};
+
+          cs = createState(iBST);
+          cs["status"] = "Cây nhị phân hiện tại (root)."; //'The current BST.';
+          //cs["lineNo"] = 0;
+          sl.push(cs);
+
+          var count = 0;
+
+          if (iBST["root"] == null) {
+            cs = createState(iBST);
+            cs["status"] = "Cây BST rỗng.<br>Cây có " + count + " nút."; //status_preorder_1
+            //cs["status"] = 'The Binary Search Tree is empty.<br>Return empty result.';
+            //cs["lineNo"] = [1, 2];
+            sl.push(cs);
+            return true;
+          } else {
+            key = iBST[iBST["root"]]["vertexClassNumber"];
+
+            cs = createState(iBST);
+            cs["vl"][key]["state"] = VERTEX_TRAVERSED;
+            cs["vl"][key]["extratext"] = "root";
+            cs["status"] =
+              "Gốc " +
+              iBST["root"] +
+              " không phải là giá trị rỗng. Bắt đầu đếm"; //status_preorder_2
+            //cs["status"] = 'The root {root} is not null.'.replace("{root}", iBST["root"]);
+            //cs["lineNo"] = 1;
+            sl.push(cs);
+
+            countAllRecursion(iBST["root"]);
+          }
+          cs = createState(iBST, vertexTraversed, edgeTraversed);
+          countHighlightVertex(key);
+          cs["status"] = "Đếm hoàn tất.<br>Kết quả: " + count + " nút."; //status_preorder_4
+          //cs["status"] = 'In-order traversal of the whole BST is complete.';
+          cs["vl"][key]["extratext"] = "root";
+          //cs["lineNo"] = 0;
+          sl.push(cs);
+
+          gw.startAnimation(sl, callback);
+
+          function countAllRecursion(cur) {
+            var curLeft = iBST[cur]["leftChild"],
+              curRight = iBST[cur]["rightChild"];
+            var key = iBST[cur]["vertexClassNumber"];
+
+            if (curLeft == null) {
+              vertexTraversed[cur] = true;
+              countHighlightVertex(key);
+            } else {
+              var curLeftClass = iBST[curLeft]["vertexClassNumber"];
+              vertexTraversed[cur] = true;
+              countHighlightVertex(key);
+              edgeTraversed[curLeftClass] = true;
+              countHighlightVertex(key);
+              countAllRecursion(curLeft);
+            }
+
+            if (curRight == null) {
+              vertexTraversed[cur] = true;
+              countHighlightVertex(key);
+            } else {
+              var curRightClass = iBST[curRight]["vertexClassNumber"];
+              vertexTraversed[cur] = true;
+              countHighlightVertex(key);
+              edgeTraversed[curRightClass] = true;
+              countHighlightVertex(key);
+              countAllRecursion(curRight);
+            }
+
+            vertexHighlighted[key] = true;
+            countHighlightVertex(key);
+            count++;
+          }
+
+          function countHighlightVertex(curkey) {
+            for (var key in vertexHighlighted)
+              cs["vl"][key]["state"] = VERTEX_HIGHLIGHTED;
+            // for (var key in vertexHighlighted) cs["vl"][key]["extratext"] = "";
+            // cs["vl"][curkey]["extratext"] = "^";
+          }
+          populatePseudocode(12);
+          return true;
+        };
+
+        this.countLeaf = function (callback) {
+          var sl = [],
+            vertexTraversed = {},
+            edgeTraversed = {},
+            cur = iBST["root"],
+            cs,
+            key;
+          var vertexHighlighted = {};
+
+          cs = createState(iBST);
+          cs["status"] = "Cây nhị phân hiện tại (root)."; //'The current BST.';
+          //cs["lineNo"] = 0;
+          sl.push(cs);
+
+          var count = 0;
+
+          if (iBST["root"] == null) {
+            cs = createState(iBST);
+            cs["status"] = "Cây BST rỗng.<br>Cây có " + count + " nút lá."; //status_preorder_1
+            //cs["status"] = 'The Binary Search Tree is empty.<br>Return empty result.';
+            //cs["lineNo"] = [1, 2];
+            sl.push(cs);
+            return true;
+          } else {
+            key = iBST[iBST["root"]]["vertexClassNumber"];
+
+            cs = createState(iBST);
+            cs["vl"][key]["state"] = VERTEX_TRAVERSED;
+            cs["vl"][key]["extratext"] = "root";
+            cs["status"] =
+              "Gốc " +
+              iBST["root"] +
+              " không phải là giá trị rỗng. Bắt đầu đếm"; //status_preorder_2
+            //cs["status"] = 'The root {root} is not null.'.replace("{root}", iBST["root"]);
+            //cs["lineNo"] = 1;
+            sl.push(cs);
+
+            countLeafRecursion(iBST["root"]);
+          }
+          cs = createState(iBST, vertexTraversed, edgeTraversed);
+          countHighlightVertex(key);
+          cs["status"] = "Đếm hoàn tất.<br>Kết quả: " + count + " nút."; //status_preorder_4
+          //cs["status"] = 'In-order traversal of the whole BST is complete.';
+          cs["vl"][key]["extratext"] = "root";
+          //cs["lineNo"] = 0;
+          sl.push(cs);
+
+          gw.startAnimation(sl, callback);
+
+          function countLeafRecursion(cur) {
+            var curLeft = iBST[cur]["leftChild"],
+              curRight = iBST[cur]["rightChild"];
+            var key = iBST[cur]["vertexClassNumber"];
+
+            if (curLeft == null && curRight == null) {
+              vertexTraversed[cur] = true;
+              countHighlightVertex(key);
+              count++;
+            }
+            if (curLeft != null) {
+              countLeafRecursion(curLeft);
+            }
+            if (curRight != null) {
+              countLeafRecursion(curRight);
+            }
+          }
+
+          function countHighlightVertex(curkey) {
+            for (var key in vertexHighlighted)
+              cs["vl"][key]["state"] = VERTEX_HIGHLIGHTED;
+            // for (var key in vertexHighlighted) cs["vl"][key]["extratext"] = "";
+            // cs["vl"][curkey]["extratext"] = "^";
+          }
+          populatePseudocode(13);
+          return true;
+        };
+
+        this.countMedium = function (callback) {
+          var sl = [],
+            vertexTraversed = {},
+            edgeTraversed = {},
+            cur = iBST["root"],
+            cs,
+            key;
+          var vertexHighlighted = {};
+
+          cs = createState(iBST);
+          cs["status"] = "Cây nhị phân hiện tại (root)."; //'The current BST.';
+          //cs["lineNo"] = 0;
+          sl.push(cs);
+
+          var count = 0;
+
+          if (iBST["root"] == null) {
+            cs = createState(iBST);
+            cs["status"] =
+              "Cây BST rỗng.<br>Cây có " + count + " nút trung gian."; //status_preorder_1
+            //cs["status"] = 'The Binary Search Tree is empty.<br>Return empty result.';
+            //cs["lineNo"] = [1, 2];
+            sl.push(cs);
+            return true;
+          } else {
+            key = iBST[iBST["root"]]["vertexClassNumber"];
+
+            cs = createState(iBST);
+            cs["vl"][key]["state"] = VERTEX_TRAVERSED;
+            cs["vl"][key]["extratext"] = "root";
+            cs["status"] =
+              "Gốc " +
+              iBST["root"] +
+              " không phải là giá trị rỗng. Bắt đầu đếm"; //status_preorder_2
+            //cs["status"] = 'The root {root} is not null.'.replace("{root}", iBST["root"]);
+            //cs["lineNo"] = 1;
+            sl.push(cs);
+
+            countMediumRecursion(iBST["root"]);
+          }
+          cs = createState(iBST, vertexTraversed, edgeTraversed);
+          countHighlightVertex(key);
+          cs["status"] = "Đếm hoàn tất.<br>Kết quả: " + count + " nút."; //status_preorder_4
+          //cs["status"] = 'In-order traversal of the whole BST is complete.';
+          cs["vl"][key]["extratext"] = "root";
+          //cs["lineNo"] = 0;
+          sl.push(cs);
+
+          gw.startAnimation(sl, callback);
+
+          function countMediumRecursion(cur) {
+            var curLeft = iBST[cur]["leftChild"],
+              curRight = iBST[cur]["rightChild"];
+            var key = iBST[cur]["vertexClassNumber"];
+
+            if (cur == iBST["root"]) {
+              if (curLeft != null) {
+                countMediumRecursion(curLeft);
+              }
+              if (curRight != null) {
+                countMediumRecursion(curRight);
+              }
+            } else {
+              if (curLeft != null || curRight != null) {
+                vertexTraversed[cur] = true;
+                countHighlightVertex(key);
+                count++;
+                if (curLeft != null) countMediumRecursion(curLeft);
+                if (curRight != null) countMediumRecursion(curRight);
+              }
+            }
+          }
+
+          function countHighlightVertex(curkey) {
+            for (var key in vertexHighlighted)
+              cs["vl"][key]["state"] = VERTEX_HIGHLIGHTED;
+            // for (var key in vertexHighlighted) cs["vl"][key]["extratext"] = "";
+            // cs["vl"][curkey]["extratext"] = "^";
+          }
+          populatePseudocode(14);
           return true;
         };
 
@@ -3492,9 +3826,9 @@
               $("#code7").html("&nbsp;&nbsp;else return p");
               break;
             case 3: // inorder traversal
-              $("#code1").html("if this == null");  //code_inorder_1
+              $("#code1").html("if this == null"); //code_inorder_1
               $("#code2").html("&nbsp;&nbsp;return"); //code_inorder_2
-              $("#code3").html("inOrder(left)");  //code_inorder_3
+              $("#code3").html("inOrder(left)"); //code_inorder_3
               $("#code4").html("visit this"); ////code_inorder_4
               $("#code5").html("inOrder(right)");
               $("#code6").html("");
@@ -3509,12 +3843,39 @@
               $("#code6").html("");
               $("#code7").html("");
               break;
-              case 11: // postorder traversal
+            case 11: // postorder traversal
               $("#code1").html("if this == null"); //code_postorder_1
               $("#code2").html("&nbsp;&nbsp;return"); //code_postorder_2
               $("#code3").html("postOrder(left)"); //code_postorder_3
               $("#code4").html("postOrder(right)"); //code_postorder_4
               $("#code5").html("visit this");
+              $("#code6").html("");
+              $("#code7").html("");
+              break;
+            case 12: //Count All
+              $("#code1").html("if this == null"); //code_postorder_1
+              $("#code2").html("&nbsp;&nbsp;return 0"); //code_postorder_2
+              $("#code3").html("cl = countAll(left)"); //code_postorder_3
+              $("#code4").html("cr = countAll(right)"); //code_postorder_4
+              $("#code5").html("return (cl + cr + 1)");
+              $("#code6").html("");
+              $("#code7").html("");
+              break;
+            case 13: //Count Leaf
+              $("#code1").html("if this == null"); //code_postorder_1
+              $("#code2").html("&nbsp;&nbsp;return 0"); //code_postorder_2
+              $("#code3").html("cl = countLeaf(left)"); //code_postorder_3
+              $("#code4").html("cr = countLeaf(right)"); //code_postorder_4
+              $("#code5").html("if left == null and right == null");
+              $("#code6").html("&nbsp;&nbsp;return (1 + cl + cr)");
+              $("#code7").html("return (cl + cr)");
+              break;
+            case 14: //Count Medium
+              $("#code1").html("call = countAll(root)"); //code_postorder_1
+              $("#code2").html("if ca < 3 return 0"); //code_postorder_2
+              $("#code3").html("cleaf = countLeaf(root)"); //code_postorder_3
+              $("#code4").html("return (call - cleaf - 1)"); //code_postorder_4
+              $("#code5").html("");
               $("#code6").html("");
               $("#code7").html("");
               break;
@@ -3670,6 +4031,20 @@
         commonAction(bw.postorderTraversal(callback), "Postorder Traversal");
       }
 
+      function countAll(callback) {
+        if (isPlaying) stop();
+        commonAction(bw.countAll(callback), "Count All Nodes");
+      }
+
+      function countLeaf(callback) {
+        if (isPlaying) stop();
+        commonAction(bw.countLeaf(callback), "Count Leaves");
+      }
+
+      function countMedium(callback) {
+        if (isPlaying) stop();
+        commonAction(bw.countMedium(callback), "Count Medium Nodes");
+      }
       // Implement these functions in each visualisation
       var userGraph = {
         vl: {},
