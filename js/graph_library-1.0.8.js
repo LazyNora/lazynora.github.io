@@ -1660,7 +1660,7 @@ var GraphVertexWidget = function (
     attributeList["extratext"]["class"] = "v" + vertexClassNumber;
     attributeList["extratext"]["x"] = cx;
     attributeList["extratext"]["y"] = cy + textYaxisOffset + 26;
-    attributeList["extratext"]["fill"] = "red";
+    attributeList["extratext"]["fill"] = "#fc03db";
     attributeList["extratext"]["font-family"] =
       graphVertexProperties["text"]["default"]["font-family"];
     attributeList["extratext"]["font-size"] = 0;
