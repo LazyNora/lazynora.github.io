@@ -1383,7 +1383,7 @@
           var initArr = [];
 
           while (initArr.length < vertexAmt) {
-            var random = Math.floor(1 + Math.random() * 99); // [1..99]
+            var random = Math.floor(1 + Math.random() * (99 - (-99))) - 99 ; // [1..99]
             if ($.inArray(random, initArr) < 0)
               // distinct
               initArr.push(random);
